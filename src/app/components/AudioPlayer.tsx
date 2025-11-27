@@ -27,8 +27,12 @@ export function AudioPlayer() {
   }, [volume]);
 
   const togglePlay = async () => {
+    console.log("🎵 togglePlay called!", { isPlaying });
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio) {
+      console.log("❌ No audio element found!");
+      return;
+    }
 
     if (isPlaying) {
       audio.pause();
@@ -38,16 +42,19 @@ export function AudioPlayer() {
 
     // Der einzig wahre 2025-Fix:
     try {
+      console.log("🎵 Trying to play audio...");
       // 1. kurz muted starten → Browser lässt immer spielen
       audio.muted = true;
       await audio.play();
+      console.log("✅ Audio started playing!");
 
       // 2. sofort wieder entmuten → Ton kommt
       audio.muted = false;
+      console.log("🔊 Audio unmuted!");
 
       setIsPlaying(true);
     } catch (err) {
-      console.log("Play blocked – very rare now");
+      console.log("❌ Play blocked:", err);
     }
   };
 
