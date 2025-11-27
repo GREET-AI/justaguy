@@ -126,15 +126,14 @@ export default function HomePage() {
                   Episode 1 Live
                 </HoverBorderGradient>
                 
-                <HoverBorderGradient
-                  as="a"
+                <a
                   href={`https://pump.fun/coin/${CURRENT_CA}`}
                   target="_blank"
-                  className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 text-lg"
+                  className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 text-lg rounded-full transition-colors duration-300 flex items-center"
                 >
                   <Zap className="w-5 h-5 mr-2" />
                   Buy $DEGEN
-                </HoverBorderGradient>
+                </a>
               </div>
             </motion.div>
           </div>
@@ -228,7 +227,7 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <BackgroundGradient className="p-6 bg-black/50 border border-red-900/20 rounded-2xl">
+                  <BackgroundGradient containerClassName="p-6 bg-black/50 border border-red-900/20 rounded-2xl">
                     <div className="space-y-4">
                       <div className="flex justify-between items-center">
                         <span className="text-red-400 font-semibold">{phase.phase}</span>
@@ -295,7 +294,7 @@ export default function HomePage() {
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <BackgroundGradient className="p-8 bg-black/50 rounded-2xl">
+              <BackgroundGradient containerClassName="p-8 bg-black/50 rounded-2xl">
                 <h3 className="text-2xl font-bold mb-6 text-white">Token Details</h3>
                 <div className="space-y-4 text-gray-300">
                   <div className="flex justify-between">
@@ -356,7 +355,7 @@ export default function HomePage() {
               </p>
             </motion.div>
 
-            <BackgroundGradient className="max-w-4xl mx-auto p-8 bg-black/50 rounded-2xl">
+            <BackgroundGradient containerClassName="max-w-4xl mx-auto p-8 bg-black/50 rounded-2xl">
               <div className="text-center space-y-6">
                 <h3 className="text-3xl font-bold text-white">Current Vote</h3>
                 <p className="text-xl text-gray-300">What should be our next exchange listing priority?</p>
@@ -443,24 +442,22 @@ export default function HomePage() {
             </h3>
             
             <div className="flex justify-center gap-6 mb-8">
-              <HoverBorderGradient
-                as="a"
+              <a
                 href="https://x.com/Solaotherealone"
                 target="_blank"
-                className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3"
+                className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3 rounded-full transition-colors duration-300"
               >
                 <Twitter className="w-5 h-5" />
-              </HoverBorderGradient>
+              </a>
               
-              <HoverBorderGradient
-                as="a"
+              <a
                 href="https://t.me/thegreatrug"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3"
+                className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3 rounded-full transition-colors duration-300"
               >
                 <Send className="w-5 h-5" />
-              </HoverBorderGradient>
+              </a>
             </div>
             
             <p className="text-gray-400 text-sm">

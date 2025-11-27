@@ -54,6 +54,7 @@ export function EpisodeShowcase() {
   const panelsInView = useInView(panelsRef, { once: true, amount: 0.1 });
 
   const [showModal, setShowModal] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <motion.section 

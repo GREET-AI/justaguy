@@ -292,7 +292,7 @@ export default function HomePage() {
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <BackgroundGradient className="p-8 bg-black/50 rounded-2xl">
+              <BackgroundGradient containerClassName="p-8 bg-black/50 rounded-2xl">
                 <h3 className="text-2xl font-bold mb-6 text-white">Token Details</h3>
                 <div className="space-y-4 text-gray-300">
                   <div className="flex justify-between">
@@ -353,7 +353,7 @@ export default function HomePage() {
               </p>
             </motion.div>
 
-            <BackgroundGradient className="max-w-4xl mx-auto p-8 bg-black/50 rounded-2xl">
+            <BackgroundGradient containerClassName="max-w-4xl mx-auto p-8 bg-black/50 rounded-2xl">
               <div className="text-center space-y-6">
                 <h3 className="text-3xl font-bold text-white">Current Vote</h3>
                 <p className="text-xl text-gray-300">What should be our next exchange listing priority?</p>
@@ -440,24 +440,22 @@ export default function HomePage() {
             </h3>
             
             <div className="flex justify-center gap-6 mb-8">
-              <HoverBorderGradient
-                as="a"
+              <a
                 href="https://x.com/Solaotherealone"
                 target="_blank"
-                className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3"
+                className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3 rounded-full transition-colors duration-300"
               >
                 <Twitter className="w-5 h-5" />
-              </HoverBorderGradient>
+              </a>
               
-              <HoverBorderGradient
-                as="a"
+              <a
                 href="https://t.me/thegreatrug"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3"
+                className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3 rounded-full transition-colors duration-300"
               >
                 <Send className="w-5 h-5" />
-              </HoverBorderGradient>
+              </a>
             </div>
             
             <p className="text-gray-400 text-sm">
