@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
-export function AudioPlayer() {
+export function WorkingAudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(0.3);
@@ -26,51 +26,34 @@ export function AudioPlayer() {
     };
   }, [volume]);
 
-  const togglePlay = async () => {
-    console.log("🎵 togglePlay called!", { isPlaying });
+  const togglePlay = () => {
+    console.log("🎵 Working togglePlay called!");
     const audio = audioRef.current;
     if (!audio) {
-      console.log("❌ No audio element found!");
+      console.log("❌ No audio element");
       return;
     }
-    
-    console.log("🎵 Audio element:", audio);
-    console.log("🎵 Audio src:", audio.src);
-    console.log("🎵 Audio readyState:", audio.readyState);
-    console.log("🎵 Audio networkState:", audio.networkState);
 
     if (isPlaying) {
       audio.pause();
       setIsPlaying(false);
-      return;
-    }
-
-    // Der FINALE 2025-Fix - ohne await!
-    try {
-      console.log("🎵 Trying to play audio...");
+      console.log("⏸️ Audio paused");
+    } else {
+      // Einfacher direkter Play - das funktioniert!
+      audio.volume = volume;
+      audio.muted = isMuted;
       
-      // Setze Volume und muted richtig
-      audio.volume = volume || 0.3;
-      audio.muted = false;
-      
-      // Play ohne await - das ist der Trick!
       const playPromise = audio.play();
-      
-      if (playPromise !== undefined) {
+      if (playPromise) {
         playPromise
           .then(() => {
-            console.log("✅ Audio started playing!");
+            console.log("✅ Audio playing!");
             setIsPlaying(true);
           })
           .catch((err) => {
-            console.log("❌ Play blocked:", err);
-            setIsPlaying(false);
+            console.log("❌ Play failed:", err);
           });
-      } else {
-        setIsPlaying(true);
       }
-    } catch (err) {
-      console.log("❌ Play error:", err);
     }
   };
 
@@ -93,7 +76,7 @@ export function AudioPlayer() {
   return (
     <>
       <audio ref={audioRef} preload="auto">
-        <source src="/Website/sounds/soundtrack.mp3" type="audio/mpeg" />
+        <source src="/sounds/soundtrack.mp3" type="audio/mpeg" />
       </audio>
 
       <motion.div
@@ -110,12 +93,10 @@ export function AudioPlayer() {
           {/* Main Play/Pause Button */}
           <motion.button
             onClick={togglePlay}
-            className="audio-player-main relative"
-            style={{ zIndex: 9999, position: "relative" }}
+            className="audio-player-main"
+            style={{ zIndex: 9999 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            initial={false}
-            animate={{ pointerEvents: "auto" }}
             aria-label={isPlaying ? "Pause soundtrack" : "Play soundtrack"}
           >
             <div className="audio-player-glow" />
