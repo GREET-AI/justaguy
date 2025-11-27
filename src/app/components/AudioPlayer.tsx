@@ -57,7 +57,7 @@ export function AudioPlayer() {
   return (
     <>
       <audio ref={audioRef} preload="auto">
-        <source src="/sounds/soundtrack.mp3" type="audio/mpeg" />
+        <source src="/Website/sounds/soundtrack.mp3" type="audio/mpeg" />
       </audio>
 
       <motion.div
