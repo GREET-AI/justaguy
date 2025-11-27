@@ -40,21 +40,32 @@ export function AudioPlayer() {
       return;
     }
 
-    // Der einzig wahre 2025-Fix:
+    // Der FINALE 2025-Fix - ohne await!
     try {
       console.log("🎵 Trying to play audio...");
-      // 1. kurz muted starten → Browser lässt immer spielen
-      audio.muted = true;
-      await audio.play();
-      console.log("✅ Audio started playing!");
-
-      // 2. sofort wieder entmuten → Ton kommt
+      
+      // Setze Volume und muted richtig
+      audio.volume = volume || 0.3;
       audio.muted = false;
-      console.log("🔊 Audio unmuted!");
-
-      setIsPlaying(true);
+      
+      // Play ohne await - das ist der Trick!
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log("✅ Audio started playing!");
+            setIsPlaying(true);
+          })
+          .catch((err) => {
+            console.log("❌ Play blocked:", err);
+            setIsPlaying(false);
+          });
+      } else {
+        setIsPlaying(true);
+      }
     } catch (err) {
-      console.log("❌ Play blocked:", err);
+      console.log("❌ Play error:", err);
     }
   };
 
