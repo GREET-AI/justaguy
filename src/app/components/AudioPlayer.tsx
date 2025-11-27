@@ -26,16 +26,20 @@ export function AudioPlayer() {
     };
   }, [volume]);
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     const audio = audioRef.current;
     if (!audio) return;
 
     if (isPlaying) {
       audio.pause();
     } else {
-      audio.play().catch(console.error);
+      // DAS IST DER EINZIGE WIRKLICHE FIX 2025-FIX
+      audio.muted = false;
+      audio.volume = 0;
+      await audio.play();
+      audio.volume = volume || 0.3;   // deine Lautstärke vom Slider
     }
-    setIsPlaying(!isPlaying);
+    setIsPlaying(!audio.paused);
   };
 
   const toggleMute = () => {
