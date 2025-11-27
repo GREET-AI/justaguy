@@ -78,9 +78,12 @@ export function AudioPlayer() {
           {/* Main Play/Pause Button */}
           <motion.button
             onClick={togglePlay}
-            className="audio-player-main"
+            className="audio-player-main relative"
+            style={{ zIndex: 60, position: "relative" }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            initial={false}
+            animate={{ pointerEvents: "auto" }}
             aria-label={isPlaying ? "Pause soundtrack" : "Play soundtrack"}
           >
             <div className="audio-player-glow" />
@@ -104,6 +107,7 @@ export function AudioPlayer() {
               {isPlaying && (
                 <motion.div
                   className="audio-player-pulse"
+                  style={{ pointerEvents: "none" }}
                   initial={{ scale: 1, opacity: 0.6 }}
                   animate={{ scale: 1.5, opacity: 0 }}
                   exit={{ scale: 1, opacity: 0 }}
@@ -153,6 +157,7 @@ export function AudioPlayer() {
           {/* Soundtrack Label - Always Visible */}
           <motion.div
             className="audio-player-label-permanent"
+            style={{ pointerEvents: "none" }}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 2, duration: 0.8 }}
@@ -169,7 +174,7 @@ export function AudioPlayer() {
                 ease: "easeInOut"
               }}
             >
-              <div className="audio-label-icon">
+              <div className="audio-label-icon" style={{ pointerEvents: "none" }}>
                 <motion.div
                   className="sound-wave"
                   animate={isPlaying ? {
