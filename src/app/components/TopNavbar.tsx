@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Zap, ChevronDown } from "lucide-react";
+import { Sparkles, Zap, ChevronDown, Copy, Check } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -37,6 +37,19 @@ const navLinks = [
 export function TopNavbar() {
   const pathname = usePathname();
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const contractAddress = "CAXCAXCAXCAXCAXCAXCAXCAXCAXCAXCAX";
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(contractAddress);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.log('Failed to copy');
+    }
+  };
 
   return (
     <motion.nav
@@ -140,6 +153,27 @@ export function TopNavbar() {
               );
             })}
           </div>
+
+          {/* Contract Address */}
+          <motion.div
+            className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-purple-600/20 via-blue-500/20 to-green-400/20 backdrop-blur-sm rounded-full border border-purple-500/30"
+            whileHover={{ scale: 1.02 }}
+          >
+            <span className="text-xs text-gray-300 font-montserrat font-medium">CA:</span>
+            <span className="text-xs text-white font-montserrat font-mono">
+              {contractAddress.slice(0, 6)}...{contractAddress.slice(-4)}
+            </span>
+            <button
+              onClick={copyToClipboard}
+              className="flex items-center justify-center w-6 h-6 bg-gradient-to-r from-purple-600 via-blue-500 to-green-400 hover:from-purple-500 hover:via-blue-400 hover:to-green-300 rounded-full transition-all duration-200"
+            >
+              {copied ? (
+                <Check className="w-3 h-3 text-white" />
+              ) : (
+                <Copy className="w-3 h-3 text-white" />
+              )}
+            </button>
+          </motion.div>
 
           <motion.div
             whileHover={{ scale: 1.05 }}
