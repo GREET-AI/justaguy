@@ -32,14 +32,23 @@ export function AudioPlayer() {
 
     if (isPlaying) {
       audio.pause();
-    } else {
-      // DAS IST DER EINZIGE WIRKLICHE FIX 2025-FIX
-      audio.muted = false;
-      audio.volume = 0;
-      await audio.play();
-      audio.volume = volume || 0.3;   // deine Lautstärke vom Slider
+      setIsPlaying(false);
+      return;
     }
-    setIsPlaying(!audio.paused);
+
+    // Der einzig wahre 2025-Fix:
+    try {
+      // 1. kurz muted starten → Browser lässt immer spielen
+      audio.muted = true;
+      await audio.play();
+
+      // 2. sofort wieder entmuten → Ton kommt
+      audio.muted = false;
+
+      setIsPlaying(true);
+    } catch (err) {
+      console.log("Play blocked – very rare now");
+    }
   };
 
   const toggleMute = () => {
