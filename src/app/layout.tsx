@@ -4,7 +4,7 @@ import "./globals.css";
 import { MobileNav } from "./components/MobileNav";
 import { TopNavbar } from "./components/TopNavbar";
 import { ScrollRestoration } from "./components/ScrollRestoration";
-import { WorkingAudioPlayer } from "./components/WorkingAudioPlayer";
+import { BrandedAudioPlayer } from "./components/BrandedAudioPlayer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -119,7 +119,7 @@ export default function RootLayout({
         <MobileNav />
         <TopNavbar />
         <ScrollRestoration />
-        <WorkingAudioPlayer />
+        <BrandedAudioPlayer />
         <div className="app-shell">
           <div className="app-content">{children}</div>
         </div>

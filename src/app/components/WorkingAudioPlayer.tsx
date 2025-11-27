@@ -33,6 +33,10 @@ export function WorkingAudioPlayer() {
       console.log("❌ No audio element");
       return;
     }
+    
+    console.log("🎵 Audio src:", audio.src);
+    console.log("🎵 Audio readyState:", audio.readyState);
+    console.log("🎵 Audio networkState:", audio.networkState);
 
     if (isPlaying) {
       audio.pause();
@@ -44,15 +48,27 @@ export function WorkingAudioPlayer() {
       audio.muted = isMuted;
       
       const playPromise = audio.play();
+      console.log("🎵 Play promise created:", playPromise);
+      
       if (playPromise) {
+        // Timeout nach 5 Sekunden
+        const timeoutId = setTimeout(() => {
+          console.log("⏰ Play promise timeout after 5s");
+        }, 5000);
+        
         playPromise
           .then(() => {
+            clearTimeout(timeoutId);
             console.log("✅ Audio playing!");
             setIsPlaying(true);
           })
           .catch((err) => {
+            clearTimeout(timeoutId);
             console.log("❌ Play failed:", err);
+            console.log("❌ Error details:", err.name, err.message);
           });
+      } else {
+        console.log("❌ No play promise returned");
       }
     }
   };
@@ -76,7 +92,7 @@ export function WorkingAudioPlayer() {
   return (
     <>
       <audio ref={audioRef} preload="auto">
-        <source src="/sounds/soundtrack.mp3" type="audio/mpeg" />
+        <source src="/Website/sounds/soundtrack.mp3" type="audio/mpeg" />
       </audio>
 
       <motion.div
