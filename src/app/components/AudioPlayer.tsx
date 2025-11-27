@@ -88,7 +88,7 @@ export function AudioPlayer() {
           <motion.button
             onClick={togglePlay}
             className="audio-player-main relative"
-            style={{ zIndex: 60, position: "relative" }}
+            style={{ zIndex: 9999, position: "relative" }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             initial={false}
