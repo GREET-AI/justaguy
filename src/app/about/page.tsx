@@ -3,33 +3,27 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const introParagraphs = [
-  "It’s me, bro. I call myself Solao. The realest Dev in the Space.",
-  "Just a dude from Germany who started as a small-time artist, media designer and web nerd. I used to make pretty websites, logos, flyers… normal stuff that makes people smile and pays the rent. Then, about a year ago, I fell down the crypto rabbit hole.",
-  "And damn… what a wild, dirty, lawless jungle this is. Every day new coins, new hopes, new dreams… and new dead bodies. People lose their life savings in 11 seconds because some anon dev pulls the rug and disappears to Dubai. I got tired of being sad and angry every single day.",
-  "So I asked myself: What if I just build my own thing? My own art, my own charts, my own coins… but without EVER rugging anyone? Sounds simple, right? But in this space that’s literally the rarest shit you can offer: a dev who actually gives a fuck and will never sell on you.",
-  "My coins have no crazy utility, no 1000x roadmap lies. The only real value is: I will never rug you. Trading fees keep the lights on, pay the animators, pay the voice actors – more episodes, more seasons, more madness.",
-  "My dream? Build a real cartoon empire. Not one series… ten, twenty, fifty seasons over my lifetime. Hire a whole team of crazy talented people and just create fire every week. I’d rather die than go back to a 9-5.",
+const crewParagraphs = [
+  "Meet the Dev Crew behind Jus a GUY – the same team that built Handguy Token (3AvXA85wtW4UdAk1mnJsncGKvfEngsTypC9nybZJbonk), a project that nearly hit 2 million market cap and proved we know how to deliver.",
+  "We're not new to this game. Handguy Token was our first major success on Solana, showing the crypto world what happens when a dedicated dev team actually delivers on their promises instead of pulling rugs.",
+  "The Handguy journey taught us everything: how to build community trust, how to execute launches properly, how to maintain momentum, and most importantly – how to never rug our holders. That token reached almost $2M market cap because we did things right from day one.",
+  "Now we're back with Jus a GUY. Same team, same commitment, bigger vision. We've learned from every trade, every holder interaction, every market cycle. This isn't our first rodeo – it's our evolution.",
+  "Our team consists of experienced developers, marketers, and community managers who've been in the Solana space since the early days. We've seen all the scams, all the rugs, all the broken promises. That's exactly why we do things differently.",
+  "Every member of this crew was involved in the Handguy Token project. We're not hiding behind anonymity – we're building transparently, delivering consistently, and proving that memecoins can be both fun AND trustworthy.",
 ];
 
 const missionParagraphs = [
-  "Smol intro: Let me be clearly honest with you, straight up. I was already paid fat money as the artist behind the curtain. I made the characters, the idea, the concept, the websites, the videos, the buy animations – I delivered a top notch homemade product and I’m damn good at marketing it.",
-  "This coin right here? 100 % made by me. 100 % launched by me. 100 % protected by me. No cabal. No insiders. No dirty games. No bots pumping it. And because of that… nobody can ever dump it either.",
-  "That’s the mission. I’m building the one coin nobody ever had the balls to build: the real evergreen community candle. The coin where you ape early and your only FOMO is “when do I sell?” Because you know this will never stop going up. NEVER.",
+  "After Handguy's success, we asked ourselves: what's next? How do we take what we learned and build something even better?",
+  "Jus a GUY is our answer. Same proven team, same commitment to never rugging, but with an even stronger community focus and clearer vision.",
+  "We're not here to pump and dump. We're here to build something that lasts. Handguy proved we can deliver – now Jus a GUY will prove we can scale.",
 ];
 
 const visionParagraphs = [
-  "Solana TV Series: We’re building the first real Solana TV Series. The mission is simple and brutal: We change how people see and use pump.fun, raydium, jupiter and all the other wild west platforms.",
-  "The vision is bigger than one coin. Way bigger. The first real media empire that runs on Solana trading fees. Not backed by VCs. Not backed by whales. Backed by art, stories, laughs and a community that actually gives a fuck.",
-  "Imagine this: 10 years from now… 20+ cartoon series running at the same time. Daily shorts. Weekly episodes. Live streams. Music drops. Merch. Games. Maybe even a full-length movie. All paid by the fees of coins that never rug.",
-  "We turn every holder into a shareholder of the funniest, realest, most dangerous entertainment machine crypto has ever seen. A place where degens don’t get rekt daily… they get entertained, they laugh, they win, and they stay forever.",
+  "The Handguy Token experience showed us that the Solana community is hungry for projects that actually deliver. Not promises, not roadmaps full of lies – real execution.",
+  "With Jus a GUY, we're taking everything that worked with Handguy and making it better. Better tokenomics, better community engagement, better long-term vision.",
+  "Our goal? Build the most trusted memecoin on Solana. One that holders can actually believe in. One that doesn't disappear after launch. One that grows organically because the team actually cares.",
+  "The Handguy crew is all in on Jus a GUY. We're not going anywhere. We're building for the long term, and we're doing it with the same team that brought you Handguy's success.",
 ];
-
-const fade = {
-  initial: { opacity: 0, y: 40 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: "easeOut" },
-};
 
 const textVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -70,26 +64,30 @@ export default function AboutPage() {
         viewport={{ once: true, amount: 0 }}
       >
         <div className="space-y-12">
-          <p className="section-eyebrow">BTC-2025 · an original Solana TV Series</p>
-          <h1 className="section-title mb-8">Who the fuck is Igor Gross?</h1>
-          {introParagraphs.map((paragraph, index) => (
+          <p className="section-eyebrow">Jus a GUY · Built by the Handguy Crew</p>
+          <h1 className="section-title mb-8">About the Crew</h1>
+          {crewParagraphs.map((paragraph, index) => (
             <MotionText key={paragraph} index={index}>
               {paragraph}
             </MotionText>
           ))}
-          <Link
-            href="https://x.com/Solaotherealone"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-fit items-center gap-3 rounded-full border border-white/25 bg-black/40 px-6 py-3 text-sm font-semibold text-white backdrop-blur"
-          >
-            Visit Artist
-          </Link>
+          <div className="glass rounded-3xl border border-white/10 p-6 backdrop-blur space-y-4 bg-gradient-to-br from-purple-900/20 to-blue-900/20">
+            <p className="text-sm font-semibold text-white/90 mb-2">Handguy Token Achievement</p>
+            <p className="text-base text-white/80">
+              Contract: <span className="font-mono text-[#14F195]">3AvXA85wtW4UdAk1mnJsncGKvfEngsTypC9nybZJbonk</span>
+            </p>
+            <p className="text-base text-white/80">
+              Peak Market Cap: <span className="font-semibold text-[#14F195]">~$2,000,000</span>
+            </p>
+            <p className="text-sm text-white/70 mt-4">
+              The same team that built Handguy is now building Jus a GUY. We've proven we can deliver. Now we're proving we can do it even better.
+            </p>
+          </div>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
           <div className="glass rounded-3xl border border-white/10 p-6 backdrop-blur space-y-4">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/40">Mission and idea</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-white/40">Mission</p>
             {missionParagraphs.map((paragraph, index) => (
               <MotionText key={paragraph} index={index}>
                 {paragraph}
@@ -109,4 +107,3 @@ export default function AboutPage() {
     </section>
   );
 }
-

@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Just a GUY - Green Color Scheme */
+:root {
+  --color-primary: #22c55e;
+  --color-secondary: #16a34a;
+  --color-accent: #86efac;
+  --color-lime: #a3e635;
+  --color-bg: #0f172a;
+}
+
 /* Scrollbar Hide Utility - FINAL VERSION */
 .scrollbar-hide { 
   -ms-overflow-style: none; 
@@ -55,14 +64,14 @@
   animation: grid 15s linear infinite;
 }
 
-/* Audio Player Styles */
+/* Audio Player Styles - Green Theme */
 .audio-player-main {
   position: relative;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(153, 69, 255, 0.2) 0%, rgba(20, 241, 149, 0.2) 100%);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(34, 197, 94, 0.2);
+  border: 2px solid rgba(34, 197, 94, 0.5);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   cursor: pointer;
@@ -71,14 +80,14 @@
 }
 
 .audio-player-main:hover {
-  border-color: rgba(153, 69, 255, 0.5);
-  box-shadow: 0 0 30px rgba(153, 69, 255, 0.3);
+  border-color: rgba(34, 197, 94, 0.8);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
 }
 
 .audio-player-glow {
   position: absolute;
   inset: -2px;
-  background: linear-gradient(135deg, #9945FF, #14F195, #00D1FF);
+  background: #22c55e;
   border-radius: 50%;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -143,8 +152,35 @@
 }
 
 .audio-control-btn:hover {
-  background: rgba(153, 69, 255, 0.3);
+  background: rgba(34, 197, 94, 0.3);
   transform: scale(1.1);
+}
+
+/* Audio Player Label - Green Theme */
+.audio-player-label-permanent {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+.audio-player-label-permanent:hover {
+  background: rgba(34, 197, 94, 0.3);
+  border-color: rgba(34, 197, 94, 0.8);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
+
+.audio-label-text {
+  color: #86efac;
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+.audio-player-label {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.audio-player-label:hover {
+  background: rgba(34, 197, 94, 0.25);
+  border-color: rgba(34, 197, 94, 0.7);
 }
 
 .audio-volume-container {
@@ -2589,6 +2625,52 @@ body {
 @media (min-width: 768px) {
   .hero-section {
     background-image: url("/Website/Backgrounds/desktop.png");
+    min-height: calc(100vw * (1800 / 3000));
+    max-height: 1800px;
+  }
+}
+
+/* Section 2 - Roadmap Background */
+.roadmap-section {
+  width: 100%;
+  background-image: url("/Website/Backgrounds/section2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-color: #0f172a;
+  min-height: calc(100vw * (2600 / 1080));
+  max-height: 2600px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .roadmap-section {
+    background-image: url("/Website/Backgrounds/section2.png");
+    min-height: calc(100vw * (1800 / 3000));
+    max-height: 1800px;
+  }
+}
+
+/* Section 3 - Gallery/How to Buy Background */
+.section3-background {
+  width: 100%;
+  background-image: url("/Website/Backgrounds/section3.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-color: #0f172a;
+  min-height: calc(100vw * (2600 / 1080));
+  max-height: 2600px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .section3-background {
+    background-image: url("/Website/Backgrounds/section3.png");
     min-height: calc(100vw * (1800 / 3000));
     max-height: 1800px;
   }

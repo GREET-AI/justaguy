@@ -3,13 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Menu, X, Sparkles, Zap } from "lucide-react";
-import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Overview", href: "/", icon: Sparkles },
-  { label: "About", href: "/about", icon: Zap },
-  { label: "How it works", href: "/how-it-works", icon: Sparkles },
+  { label: "Overview", href: "/" },
+  { label: "About JUSTAGUY", href: "/about" },
+  { label: "Chart", href: "#chart" },
+  { label: "How to Buy", href: "#how-to-buy" },
+  { label: "Gallery", href: "#gallery" },
 ];
 
 export function MobileNav() {
@@ -21,11 +22,10 @@ export function MobileNav() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
-        className="modern-mobile-trigger fixed top-4 left-4 z-50 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-[#9945FF]/20 to-[#14F195]/20 backdrop-blur-xl transition-all md:hidden"
+        className="fixed top-4 left-4 z-50 flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-green-500 bg-[#0f172a]/90 backdrop-blur-xl transition-all md:hidden"
         aria-label="Open menu"
       >
-        <Menu className="h-6 w-6 text-white" />
-        <div className="modern-mobile-trigger-glow" />
+        <Menu className="h-6 w-6 text-green-500" />
       </motion.button>
 
       <AnimatePresence>
@@ -39,61 +39,47 @@ export function MobileNav() {
               className="fixed inset-0 z-40 bg-black/90 backdrop-blur-md md:hidden"
             />
             <motion.aside
-              initial={{ x: "-100%" }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
+              exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="modern-mobile-sidebar fixed left-0 top-0 z-50 h-full w-[320px] border-r border-white/10 bg-gradient-to-br from-[#02010a] via-[#0a0515] to-[#02010a] backdrop-blur-2xl md:hidden"
+              className="fixed top-0 right-0 z-50 h-full w-64 border-l-2 border-green-500/50 bg-[#0f172a] backdrop-blur-2xl md:hidden shadow-2xl"
             >
               <div className="flex h-full flex-col p-6">
                 <div className="mb-8 flex items-center justify-between">
                   <Link href="/" onClick={() => setIsOpen(false)}>
-                    <div className="modern-mobile-logo flex items-center gap-3">
-                      <Image 
-                        src="/Website/Logo/logo.png" 
-                        alt="THE GREAT RUG Logo" 
-                        width={36} 
-                        height={36}
-                        className="rounded-lg"
-                      />
-                      <div className="flex flex-col">
-                        <span className="modern-mobile-logo-main">THE GREAT RUG</span>
-                        <span className="modern-mobile-logo-sub">Solana Cinematic OS</span>
-                      </div>
-                    </div>
+                    <h1 className="text-xl font-bold text-green-500" style={{ textShadow: "0 0 20px rgba(34, 197, 94, 0.5)" }}>
+                      JUSTAGUY
+                    </h1>
                   </Link>
                   <motion.button
                     whileHover={{ rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setIsOpen(false)}
-                    className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:bg-white/10"
+                    className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-green-500/50 bg-[#0f172a] transition hover:bg-green-500/20"
                     aria-label="Close menu"
                   >
-                    <X className="h-5 w-5 text-white" />
+                    <X className="h-5 w-5 text-green-500" />
                   </motion.button>
                 </div>
 
                 <nav className="flex-1 space-y-3">
-                  {navLinks.map((link, index) => {
-                    const Icon = link.icon;
-                    return (
-                      <motion.div
-                        key={link.href}
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
+                  {navLinks.map((link, index) => (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="block px-4 py-3 text-white/80 hover:text-green-400 hover:bg-green-500/10 rounded-xl transition-colors border border-transparent hover:border-green-500/30"
                       >
-                        <Link
-                          href={link.href}
-                          onClick={() => setIsOpen(false)}
-                          className="modern-mobile-nav-link block"
-                        >
-                          <Icon className="h-5 w-5" />
-                          <span>{link.label}</span>
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
+                        {link.label}
+                      </Link>
+                    </motion.div>
+                  ))}
                 </nav>
 
                 <motion.div
@@ -107,10 +93,9 @@ export function MobileNav() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="modern-mobile-buy-btn block w-full text-center"
+                    className="block w-full text-center px-6 py-3 bg-green-500 hover:bg-green-400 text-black font-bold rounded-full transition-all shadow-lg shadow-green-500/50"
                   >
-                    <Zap className="h-4 w-4" />
-                    BUY $GREATRUG
+                    BUY $JUSTAGUY
                   </Link>
                 </motion.div>
               </div>
@@ -121,4 +106,3 @@ export function MobileNav() {
     </>
   );
 }
-

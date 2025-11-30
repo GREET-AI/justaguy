@@ -24,24 +24,23 @@ const bangers = Bangers({
 });
 
 export const metadata: Metadata = {
-  title: "THE GREAT RUG · Solana Cinematic Memecoin",
+  title: "JUSTAGUY · More than a $HANDGUY",
   description:
-    "BTC-2025: An original Solana TV Series. The first cinematic memecoin that tells a story. Join Trump, Elon, Solao, and the crew in the wildest crypto adventure on Solana.",
+    "JUSTAGUY in a world full of green candles. The chart only goes up 🟩🟩🟩 - The greenest meme on Solana.",
   keywords: [
+    "JUSTAGUY",
+    "$JUSTAGUY",
     "Solana",
     "memecoin",
     "crypto",
-    "TV series",
-    "Trump",
-    "Elon Musk",
-    "blockchain",
-    "entertainment",
-    "BTC-2025",
-    "The Great Rug"
+    "green candles",
+    "HANDGUY",
+    "meme",
+    "chart only goes up"
   ],
-  authors: [{ name: "The Great Rug Team" }],
-  creator: "Solao",
-  publisher: "The Great Rug",
+  authors: [{ name: "JUSTAGUY Team" }],
+  creator: "JUSTAGUY",
+  publisher: "JUSTAGUY",
   
   // Favicons und Icons
   icons: {
@@ -57,11 +56,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://thegreatrug.com",
-    siteName: "The Great Rug",
-    title: "THE GREAT RUG · Solana Cinematic Memecoin",
+    url: "https://justaguy.com",
+    siteName: "JUSTAGUY",
+    title: "JUSTAGUY · More than a $HANDGUY",
     description:
-      "BTC-2025: An original Solana TV Series. The first cinematic memecoin that tells a story. Join Trump, Elon, Solao, and the crew in the wildest crypto adventure on Solana.",
+      "JUSTAGUY in a world full of green candles. The chart only goes up 🟩🟩🟩 - The greenest meme on Solana.",
     images: [
       {
         url: "/Website/Logo/logo.png",
@@ -75,11 +74,11 @@ export const metadata: Metadata = {
   // Twitter Cards
   twitter: {
     card: "summary_large_image",
-    site: "@Solaotherealone",
-    creator: "@Solaotherealone",
-    title: "THE GREAT RUG · Solana Cinematic Memecoin",
+    site: "@TherealGUYonSOL",
+    creator: "@TherealGUYonSOL",
+    title: "JUSTAGUY · More than a $HANDGUY",
     description:
-      "BTC-2025: An original Solana TV Series. The first cinematic memecoin that tells a story. Join Trump, Elon, Solao, and the crew in the wildest crypto adventure on Solana.",
+      "JUSTAGUY in a world full of green candles. The chart only goes up 🟩🟩🟩 - The greenest meme on Solana.",
     images: ["/Website/Logo/logo.png"],
   },
   
@@ -97,7 +96,7 @@ export const metadata: Metadata = {
   },
   
   // metadataBase für absolute URLs
-  metadataBase: new URL("https://thegreatrug.com"),
+  metadataBase: new URL("https://justaguy.com"),
 };
 
 export const viewport = {
@@ -114,7 +113,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${geistMono.variable} ${bangers.variable} antialiased`}
+        className={`${montserrat.variable} ${geistMono.variable} ${bangers.variable} antialiased bg-[#0f172a] text-white`}
       >
         <MobileNav />
         <TopNavbar />

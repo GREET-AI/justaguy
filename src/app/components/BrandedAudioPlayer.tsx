@@ -62,13 +62,13 @@ export function BrandedAudioPlayer() {
         onMouseEnter={() => setShowControls(true)}
         onMouseLeave={() => setShowControls(false)}
       >
-        <div className="flex items-center gap-3 bg-gradient-to-r from-purple-600 via-blue-500 to-green-400 p-[2px] rounded-full shadow-lg">
+        <div className="flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-400 p-[2px] rounded-full shadow-lg shadow-green-500/50">
           <div className="flex items-center gap-3 bg-black/90 backdrop-blur-sm rounded-full px-4 py-2">
             
             {/* Play/Pause Button */}
             <button
               onClick={togglePlay}
-              className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-purple-600 via-blue-500 to-green-400 hover:from-purple-500 hover:via-blue-400 hover:to-green-300 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 rounded-full transition-all duration-300 shadow-lg shadow-green-500/50 hover:shadow-xl hover:shadow-green-400/70 hover:scale-105"
               style={{ zIndex: 9999 }}
             >
               {isPlaying ? (
@@ -84,7 +84,7 @@ export function BrandedAudioPlayer() {
                 {/* Mute Button */}
                 <button
                   onClick={toggleMute}
-                  className="flex items-center justify-center w-8 h-8 bg-gray-700 hover:bg-gray-600 rounded-full transition-colors duration-200"
+                  className="flex items-center justify-center w-8 h-8 bg-green-500/20 hover:bg-green-500/30 border border-green-500/50 rounded-full transition-colors duration-200"
                 >
                   {isMuted ? (
                     <VolumeX className="w-4 h-4 text-white" />
@@ -107,14 +107,14 @@ export function BrandedAudioPlayer() {
                       audioRef.current.volume = newVolume;
                     }
                   }}
-                  className="w-16 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
+                  className="w-16 h-2 bg-green-500/20 rounded-lg appearance-none cursor-pointer slider"
                 />
               </>
             )}
 
             {/* Label */}
-            <span className="text-white text-sm font-montserrat font-medium">
-              {isPlaying ? "♪ PLAYING" : "♪ SOUNDTRACK"}
+            <span className="text-green-400 text-sm font-montserrat font-medium" style={{ textShadow: "0 0 10px rgba(34, 197, 94, 0.6)" }}>
+              {isPlaying ? "♪ PLAYING" : "♪ Feel like a JUSTAGUY"}
             </span>
           </div>
         </div>
@@ -125,22 +125,22 @@ export function BrandedAudioPlayer() {
           appearance: none;
           width: 14px;
           height: 14px;
-          background: linear-gradient(135deg, #9333ea, #3b82f6, #10b981);
+          background: linear-gradient(135deg, #22c55e, #16a34a);
           border-radius: 50%;
           cursor: pointer;
-          box-shadow: 0 0 8px rgba(147, 51, 234, 0.5);
+          box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
         }
         .slider::-moz-range-thumb {
           width: 14px;
           height: 14px;
-          background: linear-gradient(135deg, #9333ea, #3b82f6, #10b981);
+          background: linear-gradient(135deg, #22c55e, #16a34a);
           border-radius: 50%;
           cursor: pointer;
           border: none;
-          box-shadow: 0 0 8px rgba(147, 51, 234, 0.5);
+          box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
         }
         .slider::-webkit-slider-track {
-          background: linear-gradient(90deg, #9333ea, #3b82f6, #10b981);
+          background: linear-gradient(90deg, #22c55e, #16a34a);
           height: 3px;
           border-radius: 2px;
         }
