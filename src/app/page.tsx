@@ -354,7 +354,7 @@ export default function Home() {
                   </p>
                   <div className="bg-black/50 rounded-xl p-4 border border-green-500/30">
                     <p className="text-xs text-white/60 mb-1">Contract Address:</p>
-                    <p className="text-sm text-green-400 font-mono break-all">[Contract Address Here]</p>
+                    <p className="text-sm text-green-400 font-mono break-all">86YVEefRG6gEDLvzyB8BA4Lm3cZf8QGatQeM8mWdpump</p>
         </div>
             </div>
         </div>
@@ -374,7 +374,7 @@ export default function Home() {
 
               {/* CTA Button */}
               <div className="mt-8 pt-8 border-t border-green-500/30 text-center">
-                <Link href="https://pump.fun" target="_blank" rel="noopener noreferrer">
+                <Link href="https://pump.fun/coin/86YVEefRG6gEDLvzyB8BA4Lm3cZf8QGatQeM8mWdpump" target="_blank" rel="noopener noreferrer">
                   <motion.button
                     className="px-10 py-5 bg-green-500 hover:bg-green-400 text-black font-bold text-lg rounded-full transition-all shadow-lg shadow-green-500/50 flex items-center gap-3 mx-auto"
                                   whileHover={{ scale: 1.05 }}
@@ -474,7 +474,7 @@ export default function Home() {
             <p className="text-xl text-white/80 mb-8">
               Join the greenest meme on Solana. The chart only goes up. No red candles. Just green. 🟩
             </p>
-            <Link href="https://pump.fun" target="_blank" rel="noopener noreferrer">
+            <Link href="https://pump.fun/coin/86YVEefRG6gEDLvzyB8BA4Lm3cZf8QGatQeM8mWdpump" target="_blank" rel="noopener noreferrer">
               <motion.button
                 className="px-10 py-5 bg-green-500 hover:bg-green-400 text-black font-bold text-lg rounded-full transition-all shadow-lg shadow-green-500/50 flex items-center gap-3 mx-auto"
                 whileHover={{ scale: 1.05 }}
@@ -498,7 +498,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
             {/* Links */}
             <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6">
-              <Link href="https://pump.fun" target="_blank" rel="noopener noreferrer">
+              <Link href="https://pump.fun/coin/86YVEefRG6gEDLvzyB8BA4Lm3cZf8QGatQeM8mWdpump" target="_blank" rel="noopener noreferrer">
                 <motion.button
                   className="px-6 py-2 bg-green-500 hover:bg-green-400 text-black font-bold text-sm rounded-full transition-all shadow-lg shadow-green-500/50 flex items-center gap-2"
                   whileHover={{ scale: 1.05 }}

@@ -86,7 +86,7 @@ export function TopNavbar() {
               </Link>
 
               {/* BUY Button */}
-              <Link href="https://pump.fun" target="_blank" rel="noopener noreferrer">
+              <Link href="https://pump.fun/coin/86YVEefRG6gEDLvzyB8BA4Lm3cZf8QGatQeM8mWdpump" target="_blank" rel="noopener noreferrer">
                 <motion.button
                   className="px-6 py-3 bg-green-500 hover:bg-green-400 text-black font-bold rounded-full transition-all shadow-lg shadow-green-500/50"
                   whileHover={{ scale: 1.05 }}
@@ -149,7 +149,7 @@ export function TopNavbar() {
                   Follow on X
                 </Link>
                 <Link
-                  href="https://pump.fun"
+                  href="https://pump.fun/coin/86YVEefRG6gEDLvzyB8BA4Lm3cZf8QGatQeM8mWdpump"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
