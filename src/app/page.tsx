@@ -74,7 +74,7 @@ function Hero() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section ref={ref} className="hero-section relative w-full" aria-label="Hero Background">
+    <section ref={ref} className="hero-section relative w-full pt-16 md:pt-0" aria-label="Hero Background">
       <SolanaAurora />
     </section>
   );

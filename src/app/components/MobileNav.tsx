@@ -22,7 +22,7 @@ export function MobileNav() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
-        className="fixed top-4 left-4 z-50 flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-green-500 bg-[#0f172a]/90 backdrop-blur-xl transition-all md:hidden"
+        className="fixed top-4 left-4 z-[60] flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-green-500 bg-[#0f172a]/90 backdrop-blur-xl transition-all md:hidden"
         aria-label="Open menu"
       >
         <Menu className="h-6 w-6 text-green-500" />
@@ -43,7 +43,7 @@ export function MobileNav() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 z-50 h-full w-64 border-l-2 border-green-500/50 bg-[#0f172a] backdrop-blur-2xl md:hidden shadow-2xl"
+              className="fixed top-0 right-0 z-[60] h-full w-64 border-l-2 border-green-500/50 bg-[#0f172a] backdrop-blur-2xl md:hidden shadow-2xl"
             >
               <div className="flex h-full flex-col p-6">
                 <div className="mb-8 flex items-center justify-between">

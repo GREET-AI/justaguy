@@ -58,23 +58,22 @@ export function BrandedAudioPlayer() {
 
       {/* Branded Player - Top Right */}
       <div 
-        className="fixed top-4 right-4 z-50"
+        className="fixed top-4 right-4 z-40 md:z-50"
         onMouseEnter={() => setShowControls(true)}
         onMouseLeave={() => setShowControls(false)}
       >
-        <div className="flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-400 p-[2px] rounded-full shadow-lg shadow-green-500/50">
-          <div className="flex items-center gap-3 bg-black/90 backdrop-blur-sm rounded-full px-4 py-2">
+        <div className="flex items-center gap-2 md:gap-3 bg-gradient-to-r from-green-500 to-green-400 p-[2px] rounded-full shadow-lg shadow-green-500/50">
+          <div className="flex items-center gap-2 md:gap-3 bg-black/90 backdrop-blur-sm rounded-full px-2 py-1.5 md:px-4 md:py-2">
             
             {/* Play/Pause Button */}
             <button
               onClick={togglePlay}
-              className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 rounded-full transition-all duration-300 shadow-lg shadow-green-500/50 hover:shadow-xl hover:shadow-green-400/70 hover:scale-105"
-              style={{ zIndex: 9999 }}
+              className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 rounded-full transition-all duration-300 shadow-lg shadow-green-500/50 hover:shadow-xl hover:shadow-green-400/70 hover:scale-105"
             >
               {isPlaying ? (
-                <Pause className="w-5 h-5 text-white" />
+                <Pause className="w-4 h-4 md:w-5 md:h-5 text-white" />
               ) : (
-                <Play className="w-5 h-5 text-white ml-0.5" />
+                <Play className="w-4 h-4 md:w-5 md:h-5 text-white ml-0.5" />
               )}
             </button>
 
@@ -84,7 +83,7 @@ export function BrandedAudioPlayer() {
                 {/* Mute Button */}
                 <button
                   onClick={toggleMute}
-                  className="flex items-center justify-center w-8 h-8 bg-green-500/20 hover:bg-green-500/30 border border-green-500/50 rounded-full transition-colors duration-200"
+                  className="hidden md:flex items-center justify-center w-8 h-8 bg-green-500/20 hover:bg-green-500/30 border border-green-500/50 rounded-full transition-colors duration-200"
                 >
                   {isMuted ? (
                     <VolumeX className="w-4 h-4 text-white" />
@@ -107,13 +106,13 @@ export function BrandedAudioPlayer() {
                       audioRef.current.volume = newVolume;
                     }
                   }}
-                  className="w-16 h-2 bg-green-500/20 rounded-lg appearance-none cursor-pointer slider"
+                  className="hidden md:block w-16 h-2 bg-green-500/20 rounded-lg appearance-none cursor-pointer slider"
                 />
               </>
             )}
 
             {/* Label */}
-            <span className="text-green-400 text-sm font-montserrat font-medium" style={{ textShadow: "0 0 10px rgba(34, 197, 94, 0.6)" }}>
+            <span className="text-green-400 text-xs md:text-sm font-montserrat font-medium hidden sm:inline" style={{ textShadow: "0 0 10px rgba(34, 197, 94, 0.6)" }}>
               {isPlaying ? "♪ PLAYING" : "♪ Feel like a JUSTAGUY"}
             </span>
           </div>

@@ -104,7 +104,7 @@ export function TopNavbar() {
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="fixed top-0 left-0 right-0 z-50 md:hidden bg-[#0f172a]/90 backdrop-blur-xl border-b border-green-500/20"
+        className="fixed top-0 left-0 right-0 z-[55] md:hidden bg-[#0f172a]/90 backdrop-blur-xl border-b border-green-500/20"
       >
         <div className="flex items-center justify-between h-16 px-4">
           <Link href="/">
@@ -124,7 +124,7 @@ export function TopNavbar() {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            className="fixed top-16 right-0 h-full w-64 bg-[#0f172a] border-l-2 border-green-500/50 shadow-2xl"
+            className="fixed top-16 right-0 h-full w-64 bg-[#0f172a] border-l-2 border-green-500/50 shadow-2xl z-[55]"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
