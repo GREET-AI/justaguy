@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Geist_Mono, Bangers } from "next/font/google";
 import "./globals.css";
-import { MobileNav } from "./components/MobileNav";
 import { TopNavbar } from "./components/TopNavbar";
 import { ScrollRestoration } from "./components/ScrollRestoration";
 import { BrandedAudioPlayer } from "./components/BrandedAudioPlayer";
@@ -115,7 +114,6 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${geistMono.variable} ${bangers.variable} antialiased bg-[#0f172a] text-white`}
       >
-        <MobileNav />
         <TopNavbar />
         <ScrollRestoration />
         <BrandedAudioPlayer />
