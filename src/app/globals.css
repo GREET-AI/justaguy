@@ -2607,13 +2607,13 @@ body {
 
 .hero-section {
   width: 100%;
-  background-image: url("/Website/Backgrounds/desktop.png");
+  background-image: url("/Website/Backgrounds/mobile1.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top left;
   background-color: #02010a;
-  min-height: calc(100vw * (1800 / 3000));
-  max-height: 1800px;
+  min-height: calc(100vw * (2600 / 1080));
+  max-height: 2600px;
   margin: 0;
   position: relative;
   overflow: hidden;
@@ -2622,10 +2622,18 @@ body {
   justify-content: center;
 }
 
+@media (min-width: 768px) {
+  .hero-section {
+    background-image: url("/Website/Backgrounds/desktop.png");
+    min-height: calc(100vw * (1800 / 3000));
+    max-height: 1800px;
+  }
+}
+
 /* Section 2 - Roadmap Background */
 .roadmap-section {
   width: 100%;
-  background-image: url("/Website/Backgrounds/section2.png");
+  background-image: url("/Website/Backgrounds/mobile2.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top left;
