@@ -22,9 +22,16 @@ const bangers = Bangers({
   weight: ["400"],
 });
 
+function normalizeSiteUrl(input: string | undefined) {
+  const value = input?.trim();
+  if (!value) return undefined;
+  if (/^https?:\/\//i.test(value)) return value.replace(/^http:\/\//i, "https://");
+  return `https://${value}`;
+}
+
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
-  process.env.VERCEL_URL?.trim()?.replace(/^https?:\/\//, "https://") ||
+  normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL) ||
+  normalizeSiteUrl(process.env.VERCEL_URL) ||
   "https://example.com";
 
 export const metadata: Metadata = {
