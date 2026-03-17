@@ -3,7 +3,7 @@ import { Montserrat, Geist_Mono, Bangers } from "next/font/google";
 import "./globals.css";
 import { TopNavbar } from "./components/TopNavbar";
 import { ScrollRestoration } from "./components/ScrollRestoration";
-import { BrandedAudioPlayer } from "./components/BrandedAudioPlayer";
+import { CryptoBackground } from "./components/CryptoBackground";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -22,24 +22,28 @@ const bangers = Bangers({
   weight: ["400"],
 });
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+  process.env.VERCEL_URL?.trim()?.replace(/^https?:\/\//, "https://") ||
+  "https://example.com";
+
 export const metadata: Metadata = {
-  title: "JUSTAGUY · More than a $HANDGUY",
+  title: "$GENNY · One Cycle. One Legacy.",
   description:
-    "JUSTAGUY in a world full of green candles. The chart only goes up 🟩🟩🟩 - The greenest meme on Solana.",
+    "The generational wealth speedrun. Conviction > noise. One cycle can change a bloodline. $GENNY.",
   keywords: [
-    "JUSTAGUY",
-    "$JUSTAGUY",
-    "Solana",
-    "memecoin",
+    "GENNY",
+    "$GENNY",
+    "generational wealth",
     "crypto",
-    "green candles",
-    "HANDGUY",
-    "meme",
-    "chart only goes up"
+    "memecoin",
+    "community",
+    "legacy",
+    "cycle"
   ],
-  authors: [{ name: "JUSTAGUY Team" }],
-  creator: "JUSTAGUY",
-  publisher: "JUSTAGUY",
+  authors: [{ name: "GENNY" }],
+  creator: "GENNY",
+  publisher: "GENNY",
   
   // Favicons und Icons
   icons: {
@@ -55,17 +59,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://justaguy.com",
-    siteName: "JUSTAGUY",
-    title: "JUSTAGUY · More than a $HANDGUY",
+    url: SITE_URL,
+    siteName: "GENNY",
+    title: "$GENNY · One Cycle. One Legacy.",
     description:
-      "JUSTAGUY in a world full of green candles. The chart only goes up 🟩🟩🟩 - The greenest meme on Solana.",
+      "The generational wealth speedrun. Conviction > noise. One cycle can change a bloodline. $GENNY.",
     images: [
       {
         url: "/Website/Logo/logo.png",
         width: 1200,
         height: 630,
-        alt: "The Great Rug Logo",
+        alt: "GENNY",
       },
     ],
   },
@@ -73,11 +77,11 @@ export const metadata: Metadata = {
   // Twitter Cards
   twitter: {
     card: "summary_large_image",
-    site: "@TherealGUYonSOL",
-    creator: "@TherealGUYonSOL",
-    title: "JUSTAGUY · More than a $HANDGUY",
+    site: "@GENNY",
+    creator: "@GENNY",
+    title: "$GENNY · One Cycle. One Legacy.",
     description:
-      "JUSTAGUY in a world full of green candles. The chart only goes up 🟩🟩🟩 - The greenest meme on Solana.",
+      "The generational wealth speedrun. Conviction > noise. One cycle can change a bloodline. $GENNY.",
     images: ["/Website/Logo/logo.png"],
   },
   
@@ -95,7 +99,7 @@ export const metadata: Metadata = {
   },
   
   // metadataBase für absolute URLs
-  metadataBase: new URL("https://justaguy.com"),
+  metadataBase: new URL(SITE_URL),
 };
 
 export const viewport = {
@@ -114,9 +118,9 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${geistMono.variable} ${bangers.variable} antialiased bg-[#0f172a] text-white`}
       >
+        <CryptoBackground />
         <TopNavbar />
         <ScrollRestoration />
-        <BrandedAudioPlayer />
         <div className="app-shell">
           <div className="app-content">{children}</div>
         </div>

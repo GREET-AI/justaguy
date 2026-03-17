@@ -114,7 +114,7 @@ export default function HomePage() {
               
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 The first cinematic memecoin that tells a story. Join Trump, Elon, Solao, and the crew 
-                in the wildest crypto adventure on Solana. This isn't just a coin – it's entertainment with real utility.
+                in the wildest crypto adventure on Solana. This isn&apos;t just a coin – it&apos;s entertainment with real utility.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -348,7 +348,7 @@ export default function HomePage() {
                 🗳️ Community Governance
               </AnimatedGradientText>
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                You <span className="text-red-500">Decide</span> What's Next
+                You <span className="text-red-500">Decide</span> What&apos;s Next
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Every major decision is community-voted. Your voice shapes the roadmap.
@@ -399,10 +399,10 @@ export default function HomePage() {
                 🎯 Our Ambition
               </AnimatedGradientText>
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                We're Going for <span className="text-red-500">Hollywood</span>
+                We&apos;re Going for <span className="text-red-500">Hollywood</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                This is not just a coin – we're building the future of meme entertainment.
+                This is not just a coin – we&apos;re building the future of meme entertainment.
               </p>
             </motion.div>
 
@@ -415,7 +415,7 @@ export default function HomePage() {
               >
                 {[...pressQuotes, ...pressQuotes].map((quote, i) => (
                   <span key={i} className="mx-8 text-lg font-semibold text-gray-300">
-                    "{quote}"
+                    &quot;{quote}&quot;
                   </span>
                 ))}
               </motion.div>
@@ -443,7 +443,7 @@ export default function HomePage() {
             
             <div className="flex justify-center gap-6 mb-8">
               <a
-                href="https://x.com/Solaotherealone"
+                href="https://x.com/i/communities/2033903468377686414"
                 target="_blank"
                 className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3 rounded-full transition-colors duration-300"
               >
@@ -451,7 +451,7 @@ export default function HomePage() {
               </a>
               
               <a
-                href="https://t.me/thegreatrug"
+                href="https://t.me/GENNYCOMMUNITY7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3 rounded-full transition-colors duration-300"

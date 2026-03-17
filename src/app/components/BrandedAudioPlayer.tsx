@@ -56,34 +56,35 @@ export function BrandedAudioPlayer() {
         <source src="/Website/sounds/soundtrack.mp3" type="audio/mpeg" />
       </audio>
 
-      {/* Branded Player - Top Right */}
+      {/* Branded Player - Bottom Right on Mobile, Top Right on Desktop */}
       <div 
-        className="fixed top-4 right-4 z-40 md:z-50"
+        className="fixed bottom-4 right-4 md:top-4 md:bottom-auto z-[60]"
         onMouseEnter={() => setShowControls(true)}
         onMouseLeave={() => setShowControls(false)}
+        onTouchStart={() => setShowControls(true)}
       >
-        <div className="flex items-center gap-2 md:gap-3 bg-gradient-to-r from-green-500 to-green-400 p-[2px] rounded-full shadow-lg shadow-green-500/50">
+        <div className="flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#fcc32a] to-[#fdd85c] p-[2px] rounded-full shadow-lg shadow-[#fcc32a]/50">
           <div className="flex items-center gap-2 md:gap-3 bg-black/90 backdrop-blur-sm rounded-full px-2 py-1.5 md:px-4 md:py-2">
             
             {/* Play/Pause Button */}
             <button
               onClick={togglePlay}
-              className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 rounded-full transition-all duration-300 shadow-lg shadow-green-500/50 hover:shadow-xl hover:shadow-green-400/70 hover:scale-105"
+              className="flex items-center justify-center w-10 h-10 md:w-10 md:h-10 bg-gradient-to-r from-[#fcc32a] to-[#fdd85c] hover:from-[#fdd85c] hover:to-[#ffe066] active:scale-95 rounded-full transition-all duration-300 shadow-lg shadow-[#fcc32a]/50 hover:shadow-xl hover:shadow-[#fcc32a]/70 hover:scale-105"
             >
               {isPlaying ? (
-                <Pause className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                <Pause className="w-5 h-5 md:w-5 md:h-5 text-white" />
               ) : (
-                <Play className="w-4 h-4 md:w-5 md:h-5 text-white ml-0.5" />
+                <Play className="w-5 h-5 md:w-5 md:h-5 text-white ml-0.5" />
               )}
             </button>
 
-            {/* Controls (show on hover) */}
+            {/* Controls (show on hover/touch) */}
             {showControls && (
               <>
                 {/* Mute Button */}
                 <button
                   onClick={toggleMute}
-                  className="hidden md:flex items-center justify-center w-8 h-8 bg-green-500/20 hover:bg-green-500/30 border border-green-500/50 rounded-full transition-colors duration-200"
+                  className="hidden md:flex items-center justify-center w-8 h-8 bg-[#fcc32a]/20 hover:bg-[#fcc32a]/30 border border-[#fcc32a]/50 rounded-full transition-colors duration-200"
                 >
                   {isMuted ? (
                     <VolumeX className="w-4 h-4 text-white" />
@@ -106,14 +107,14 @@ export function BrandedAudioPlayer() {
                       audioRef.current.volume = newVolume;
                     }
                   }}
-                  className="hidden md:block w-16 h-2 bg-green-500/20 rounded-lg appearance-none cursor-pointer slider"
+                  className="hidden md:block w-16 h-2 bg-[#fcc32a]/20 rounded-lg appearance-none cursor-pointer slider"
                 />
               </>
             )}
 
-            {/* Label */}
-            <span className="text-green-400 text-xs md:text-sm font-montserrat font-medium hidden sm:inline" style={{ textShadow: "0 0 10px rgba(34, 197, 94, 0.6)" }}>
-              {isPlaying ? "♪ PLAYING" : "♪ Feel like a JUSTAGUY"}
+            {/* Label - visible on mobile too */}
+            <span className="text-[#fcc32a] text-xs md:text-sm font-montserrat font-medium" style={{ textShadow: "0 0 10px rgba(252, 195, 42, 0.6)" }}>
+              {isPlaying ? "♪ PLAYING" : "♪ Feel like a Bandit"}
             </span>
           </div>
         </div>
@@ -124,22 +125,22 @@ export function BrandedAudioPlayer() {
           appearance: none;
           width: 14px;
           height: 14px;
-          background: linear-gradient(135deg, #22c55e, #16a34a);
+          background: linear-gradient(135deg, #fcc32a, #d4a017);
           border-radius: 50%;
           cursor: pointer;
-          box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+          box-shadow: 0 0 8px rgba(252, 195, 42, 0.6);
         }
         .slider::-moz-range-thumb {
           width: 14px;
           height: 14px;
-          background: linear-gradient(135deg, #22c55e, #16a34a);
+          background: linear-gradient(135deg, #fcc32a, #d4a017);
           border-radius: 50%;
           cursor: pointer;
           border: none;
-          box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+          box-shadow: 0 0 8px rgba(252, 195, 42, 0.6);
         }
         .slider::-webkit-slider-track {
-          background: linear-gradient(90deg, #22c55e, #16a34a);
+          background: linear-gradient(90deg, #fcc32a, #d4a017);
           height: 3px;
           border-radius: 2px;
         }

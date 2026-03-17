@@ -138,9 +138,9 @@ export function EpisodeShowcaseYouTube() {
                   animate={{
                     scale: [1, 1.1, 1],
                     boxShadow: [
-                      "0 0 20px rgba(20, 241, 149, 0.5)",
-                      "0 0 40px rgba(20, 241, 149, 0.8)",
-                      "0 0 20px rgba(20, 241, 149, 0.5)"
+                      "0 0 20px rgba(252, 195, 42, 0.5)",
+                      "0 0 40px rgba(252, 195, 42, 0.8)",
+                      "0 0 20px rgba(252, 195, 42, 0.5)"
                     ]
                   }}
                   transition={{ duration: 2, repeat: Infinity }}

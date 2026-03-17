@@ -56,7 +56,7 @@ export function LiveStats() {
           
           {/* Market Cap - Live */}
           <motion.div
-            className="bg-black/40 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:border-[#14F195] transition-all duration-300 group"
+            className="bg-black/40 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:border-[#fcc32a] transition-all duration-300 group"
             whileHover={{ scale: 1.02, y: -5 }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,10 +64,10 @@ export function LiveStats() {
             transition={{ delay: 0.1 }}
           >
             <div className="text-center space-y-3">
-              <div className="text-xs uppercase tracking-wider text-[#14F195] font-mono">
+              <div className="text-xs uppercase tracking-wider text-[#fcc32a] font-mono">
                 Market Cap
               </div>
-              <div className="text-xl md:text-2xl font-bangers text-white group-hover:text-[#14F195] transition-colors">
+              <div className="text-xl md:text-2xl font-bangers text-white group-hover:text-[#fcc32a] transition-colors">
                 {isLoading ? (
                   <div className="animate-pulse bg-gray-600 h-6 rounded"></div>
                 ) : error ? (
@@ -77,7 +77,7 @@ export function LiveStats() {
                 )}
               </div>
               {!isLoading && !error && (
-                <div className="text-xs text-green-400">● LIVE</div>
+                <div className="text-xs text-[#fcc32a]">● LIVE</div>
               )}
               {error && (
                 <div className="text-xs text-yellow-400">⚠ Offline</div>
@@ -106,7 +106,7 @@ export function LiveStats() {
                 )}
               </div>
               {!isLoading && !error && (
-                <div className={`text-xs ${priceChange24h >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                <div className={`text-xs ${priceChange24h >= 0 ? 'text-[#fcc32a]' : 'text-red-400'}`}>
                   {priceChange24h >= 0 ? '↗' : '↘'} {Math.abs(priceChange24h).toFixed(2)}%
                 </div>
               )}
@@ -165,7 +165,7 @@ export function LiveStats() {
 
           {/* LP Status - Static */}
           <motion.div
-            className="bg-black/40 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:border-green-400 transition-all duration-300 group"
+            className="bg-black/40 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:border-[#fcc32a] transition-all duration-300 group"
             whileHover={{ scale: 1.02, y: -5 }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -173,13 +173,13 @@ export function LiveStats() {
             transition={{ delay: 0.5 }}
           >
             <div className="text-center space-y-3">
-              <div className="text-xs uppercase tracking-wider text-green-400 font-mono">
+              <div className="text-xs uppercase tracking-wider text-[#fcc32a] font-mono">
                 LP Status
               </div>
-              <div className="text-xl md:text-2xl font-bangers text-white group-hover:text-green-400 transition-colors">
+              <div className="text-xl md:text-2xl font-bangers text-white group-hover:text-[#fcc32a] transition-colors">
                 100% Burned
               </div>
-              <div className="text-xs text-green-400">✓ Verified</div>
+              <div className="text-xs text-[#fcc32a]">✓ Verified</div>
             </div>
           </motion.div>
 
@@ -213,15 +213,15 @@ export function LiveStats() {
           viewport={{ once: true }}
           transition={{ delay: 0.8 }}
         >
-          <div className="inline-flex items-center gap-4 bg-black/60 backdrop-blur-sm border border-gray-700 rounded-xl px-6 py-4 hover:border-[#14F195] transition-all duration-300">
+          <div className="inline-flex items-center gap-4 bg-black/60 backdrop-blur-sm border border-gray-700 rounded-xl px-6 py-4 hover:border-[#fcc32a] transition-all duration-300">
             <div className="text-sm text-gray-400">
-              <span className="text-green-400 font-mono">Contract Renounced</span>
+              <span className="text-[#fcc32a] font-mono">Contract Renounced</span>
               <span className="mx-2">•</span>
               <span className="font-mono">EKpQGSJt...zcjm</span>
             </div>
             <button 
               onClick={() => navigator.clipboard.writeText('EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm')}
-              className="text-xs bg-[#14F195]/20 hover:bg-[#14F195]/40 text-[#14F195] px-3 py-1 rounded-lg transition-all duration-300"
+              className="text-xs bg-[#fcc32a]/20 hover:bg-[#fcc32a]/40 text-[#fcc32a] px-3 py-1 rounded-lg transition-all duration-300"
             >
               Copy CA
             </button>

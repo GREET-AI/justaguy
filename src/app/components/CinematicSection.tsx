@@ -22,7 +22,7 @@ const heroStats = [
     label: "LP Burned", 
     suffix: "%", 
     prefix: "",
-    color: "#14F195" 
+    color: "#fcc32a" 
   },
   { 
     icon: Users, 
@@ -100,7 +100,7 @@ export function CinematicSection() {
           animate={sublineInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <p className="cinematic-subline">Solana&apos;s most cinematic memecoin</p>
+          <p className="cinematic-subline">BNB Chain&apos;s most cinematic memecoin</p>
         </motion.div>
 
         {/* Typewriter Description */}
@@ -112,7 +112,7 @@ export function CinematicSection() {
           transition={{ duration: 0.8, delay: 1 }}
         >
           <TypewriterText 
-            text="BTC 2025. An original Solana TV Series. Episode 1 - 15+ minutes - live now."
+            text="BTC 2025. An original BNB Chain TV Series. Episode 1 - 15+ minutes - live now."
             startDelay={1.5}
           />
         </motion.div>

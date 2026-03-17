@@ -17,7 +17,7 @@ export function BackgroundGradient({
   containerClassName,
   animate = true,
   gradientFrom = "#9945FF",
-  gradientVia = "#14F195",
+  gradientVia = "#fcc32a",
   gradientTo = "#00D1FF",
 }: BackgroundGradientProps) {
   const gradient = `linear-gradient(135deg, ${gradientFrom}, ${gradientVia}, ${gradientTo})`;

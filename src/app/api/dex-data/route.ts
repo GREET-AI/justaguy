@@ -2,6 +2,20 @@ import { NextResponse } from 'next/server';
 
 const DOGWIFHAT_PAIR = 'EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx';
 
+type DexPair = {
+  priceUsd?: string;
+  fdv?: number;
+  marketCap?: number;
+  volume?: { h24?: number };
+  liquidity?: { usd?: number };
+  priceChange?: { h24?: number };
+};
+
+type DexPairsResponse = {
+  pair?: DexPair;
+  pairs?: DexPair[];
+};
+
 export async function GET() {
   console.log('🚀 Backend API called - fetching DexScreener data...');
   
@@ -26,7 +40,7 @@ export async function GET() {
       throw new Error(`DexScreener API failed: ${response.status}`);
     }
 
-    const data = await response.json();
+    const data = (await response.json()) as DexPairsResponse;
     console.log('📈 Raw DexScreener Data:', JSON.stringify(data, null, 2));
     
     // For pairs endpoint, data.pair instead of data.pairs[0]
@@ -36,7 +50,11 @@ export async function GET() {
 
     // Use pair directly or find best pair by liquidity
     const pair = data.pair || (data.pairs && data.pairs.length > 0 
-      ? data.pairs.sort((a: any, b: any) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0))[0]
+      ? data.pairs
+          .slice()
+          .sort(
+            (a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0)
+          )[0]
       : null);
     
     if (!pair) {

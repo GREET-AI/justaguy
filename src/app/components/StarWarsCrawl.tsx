@@ -10,11 +10,11 @@ const crawlText = [
   "",
   "It is a period of crypto chaos.",
   "Rug pulls and scams have spread",
-  "across the Solana blockchain,",
+  "across the BNB Chain blockchain,",
   "leaving degens broke and broken.",
   "",
   "During the battle, a mysterious",
-  "developer known as SOLAO managed",
+  "developer known as BNB DEV managed",
   "to steal the secret plans to the",
   "ultimate memecoin - one with the",
   "power to never rug its holders.",
@@ -27,9 +27,9 @@ const crawlText = [
   "restore freedom to the galaxy...",
   "",
   "THE GREAT RUG",
-  "A Solana Story",
+  "A BNB Chain Story",
   "",
-  "Coming to pump.fun",
+  "Coming to four.meme",
   "Winter 2025"
 ];
 
@@ -50,7 +50,7 @@ const generateStars = () => {
 
 const generateParticles = () => {
   const particles = [];
-  const colors = ['#9945FF', '#14F195', '#00D1FF', '#FB2BFF'];
+  const colors = ['#9945FF', '#fcc32a', '#00D1FF', '#FB2BFF'];
   for (let i = 0; i < 50; i++) {
     particles.push({
       id: i,
@@ -157,7 +157,7 @@ export function StarWarsCrawl() {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <h1 className="crawl-start-title">THE GREAT RUG</h1>
-            <p className="crawl-start-subtitle">A Solana Story</p>
+            <p className="crawl-start-subtitle">A BNB Chain Story</p>
             <motion.button
               className="crawl-start-button"
               onClick={startCrawl}
@@ -227,7 +227,7 @@ export function StarWarsCrawl() {
               animate={{
                 textShadow: [
                   "0 0 20px #9945FF",
-                  "0 0 40px #14F195", 
+                  "0 0 40px #fcc32a", 
                   "0 0 20px #9945FF"
                 ]
               }}

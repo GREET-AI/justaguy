@@ -33,7 +33,7 @@ const comicQuotes = [
 
 // Confetti particles for hover effect
 const createConfetti = () => {
-  const colors = ['#9945FF', '#14F195', '#00D1FF', '#FB2BFF'];
+  const colors = ['#9945FF', '#fcc32a', '#00D1FF', '#FB2BFF'];
   return Array.from({ length: 12 }, (_, i) => ({
     id: i,
     color: colors[Math.floor(Math.random() * colors.length)],

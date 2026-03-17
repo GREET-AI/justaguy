@@ -19,7 +19,7 @@ export function DottedGlowBackground({
   gap = 12,
   radius = 2,
   color = "rgba(153, 69, 255, 0.4)",
-  glowColor = "rgba(20, 241, 149, 0.6)",
+  glowColor = "rgba(252, 195, 42, 0.6)",
   opacity = 0.6,
   speedMin = 0.4,
   speedMax = 1.3,

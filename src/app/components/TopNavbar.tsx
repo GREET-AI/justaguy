@@ -4,15 +4,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X, Twitter } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Overview", href: "/" },
-  { label: "About JUSTAGUY", href: "/about" },
-  { label: "Chart", href: "#chart" },
-  { label: "How to Buy", href: "#how-to-buy" },
-  { label: "Gallery", href: "#gallery" },
+  { label: "About $GENNY", href: "/about" },
+  { label: "Thesis", href: "/#thesis" },
+  { label: "How to Buy", href: "/#how-to-buy" },
+  { label: "Meme Machine", href: "/#meme-machine" },
 ];
+
+const BUY_URL =
+  "https://pump.fun/coin/BLUqNbyTuzVJK57odsLwVv2d2582LfdsgqBr3CF9pump";
 
 export function TopNavbar() {
   const pathname = usePathname();
@@ -35,7 +38,7 @@ export function TopNavbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
         className={`fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300 ${
-          scrolled ? "bg-[#0f172a]/80 backdrop-blur-xl border-b border-green-500/20" : "bg-transparent"
+          scrolled ? "bg-[#0f172a]/80 backdrop-blur-xl border-b border-[#fcc32a]/20" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -43,11 +46,11 @@ export function TopNavbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <motion.h1
-                className="text-2xl font-bold text-green-500"
-                style={{ textShadow: "0 0 20px rgba(34, 197, 94, 0.5)" }}
+                className="text-2xl font-bold text-[#fcc32a]"
+                style={{ textShadow: "0 0 20px rgba(252, 195, 42, 0.5)" }}
                 whileHover={{ scale: 1.05 }}
               >
-                JUSTAGUY
+                GENNY
               </motion.h1>
             </Link>
 
@@ -61,8 +64,8 @@ export function TopNavbar() {
                     href={link.href}
                     className={`text-sm font-medium transition-colors ${
                       isActive
-                        ? "text-green-500"
-                        : "text-white/80 hover:text-green-400"
+                        ? "text-[#fcc32a]"
+                        : "text-white/80 hover:text-[#fcc32a]"
                     }`}
                   >
                     {link.label}
@@ -73,26 +76,14 @@ export function TopNavbar() {
 
             {/* Buttons */}
             <div className="flex items-center gap-3">
-              {/* Follow on X Button */}
-              <Link href="https://x.com/TherealGUYonSOL" target="_blank" rel="noopener noreferrer">
-                <motion.button
-                  className="px-4 py-2 bg-black/80 hover:bg-black/90 text-white font-bold text-sm rounded-full transition-all border-2 border-green-500/50 hover:border-green-500 flex items-center gap-2 backdrop-blur-sm"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Twitter className="w-4 h-4" />
-                  Follow on X
-                </motion.button>
-              </Link>
-
               {/* BUY Button */}
-              <Link href="https://pump.fun/coin/86YVEefRG6gEDLvzyB8BA4Lm3cZf8QGatQeM8mWdpump" target="_blank" rel="noopener noreferrer">
+              <Link href={BUY_URL} target="_blank" rel="noopener noreferrer">
                 <motion.button
-                  className="px-6 py-3 bg-green-500 hover:bg-green-400 text-black font-bold rounded-full transition-all shadow-lg shadow-green-500/50"
+                  className="px-6 py-3 bg-[#fcc32a] hover:bg-[#fdd85c] text-black font-bold rounded-full transition-all shadow-lg shadow-[#fcc32a]/50"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  BUY $JUSTAGUY
+                  BUY $GENNY
                 </motion.button>
               </Link>
             </div>
@@ -104,11 +95,11 @@ export function TopNavbar() {
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="fixed top-0 left-0 right-0 z-[55] md:hidden bg-[#0f172a]/90 backdrop-blur-xl border-b border-green-500/20"
+        className="fixed top-0 left-0 right-0 z-[55] md:hidden bg-[#0f172a]/90 backdrop-blur-xl border-b border-[#fcc32a]/20"
       >
         <div className="flex items-center justify-between h-16 px-4">
           <Link href="/">
-            <h1 className="text-xl font-bold text-green-500">Just a GUY</h1>
+            <h1 className="text-xl font-bold text-[#fcc32a]">GENNY</h1>
           </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -124,7 +115,7 @@ export function TopNavbar() {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            className="fixed top-16 right-0 h-full w-64 bg-[#0f172a] border-l-2 border-green-500/50 shadow-2xl z-[55]"
+            className="fixed top-16 right-0 h-full w-64 bg-[#0f172a] border-l-2 border-[#fcc32a]/50 shadow-2xl z-[55]"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
@@ -132,30 +123,20 @@ export function TopNavbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white/80 hover:text-green-400 transition-colors py-2"
+                  className="text-white/80 hover:text-[#fcc32a] transition-colors py-2"
                 >
                   {link.label}
                 </Link>
               ))}
               <div className="mt-4 flex flex-col gap-3">
                 <Link
-                  href="https://x.com/TherealGUYonSOL"
+                  href={BUY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-6 py-3 bg-black/80 hover:bg-black/90 text-white font-bold text-sm rounded-full text-center transition-all border-2 border-green-500/50 hover:border-green-500 flex items-center justify-center gap-2"
+                  className="px-6 py-3 bg-[#fcc32a] hover:bg-[#fdd85c] text-black font-bold rounded-full text-center transition-all"
                 >
-                  <Twitter className="w-4 h-4" />
-                  Follow on X
-                </Link>
-                <Link
-                  href="https://pump.fun/coin/86YVEefRG6gEDLvzyB8BA4Lm3cZf8QGatQeM8mWdpump"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-6 py-3 bg-green-500 hover:bg-green-400 text-black font-bold rounded-full text-center transition-all"
-                >
-                  BUY $JUSTAGUY
+                  BUY $GENNY
                 </Link>
               </div>
             </div>

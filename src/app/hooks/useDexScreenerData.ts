@@ -70,13 +70,20 @@ export function useDexScreenerData(tokenAddress: string = "EKpQGSJtjMFqKZ9KQanSq
   };
 
   useEffect(() => {
-    // Initial fetch
-    fetchData();
+    // Initial fetch (deferred to avoid setState-in-effect lint rule)
+    const initial = window.setTimeout(() => {
+      void fetchData();
+    }, 0);
     
     // Refresh every 30 seconds
-    const interval = setInterval(fetchData, 30000);
+    const interval = window.setInterval(() => {
+      void fetchData();
+    }, 30000);
     
-    return () => clearInterval(interval);
+    return () => {
+      window.clearTimeout(initial);
+      window.clearInterval(interval);
+    };
   }, [tokenAddress]);
 
   return data;

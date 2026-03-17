@@ -22,7 +22,7 @@ const heroStats = [
     label: "LP Burned", 
     suffix: "%", 
     prefix: "",
-    color: "#14F195" 
+    color: "#fcc32a" 
   },
   { 
     icon: Users, 
@@ -101,7 +101,7 @@ export function CinematicHero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 2 }}
           >
-            <TypewriterText text="Solana's most cinematic memecoin" />
+            <TypewriterText text="BNB Chain's most cinematic memecoin" />
           </motion.div>
 
           {/* Episode Teaser */}
@@ -134,9 +134,9 @@ export function CinematicHero() {
                     animate={isVideoHovered ? {
                       scale: [1, 1.1, 1],
                       boxShadow: [
-                        "0 0 20px rgba(20, 241, 149, 0.5)",
-                        "0 0 40px rgba(20, 241, 149, 0.8)",
-                        "0 0 20px rgba(20, 241, 149, 0.5)"
+                        "0 0 20px rgba(252, 195, 42, 0.5)",
+                        "0 0 40px rgba(252, 195, 42, 0.8)",
+                        "0 0 20px rgba(252, 195, 42, 0.5)"
                       ]
                     } : {}}
                     transition={{ duration: 1.5, repeat: Infinity }}

@@ -21,8 +21,8 @@ function StatCard({ label, value, detail, isLoading, isLive, priceChange }: Stat
         <p className="text-xs uppercase tracking-[0.3em] text-white/40">{label}</p>
         {isLive && (
           <div className="flex items-center gap-1">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="text-xs text-green-400">LIVE</span>
+            <div className="w-2 h-2 bg-[#fcc32a] rounded-full animate-pulse"></div>
+            <span className="text-xs text-[#fcc32a]">LIVE</span>
           </div>
         )}
       </div>
@@ -48,7 +48,7 @@ function StatCard({ label, value, detail, isLoading, isLive, priceChange }: Stat
         {priceChange !== undefined && (
           <span className={`text-xs px-2 py-1 rounded-full ${
             priceChange >= 0 
-              ? 'bg-green-500/20 text-green-400' 
+              ? 'bg-[#fcc32a]/20 text-[#fcc32a]' 
               : 'bg-red-500/20 text-red-400'
           }`}>
             {priceChange >= 0 ? '↗' : '↘'} {Math.abs(priceChange).toFixed(2)}%
@@ -69,7 +69,7 @@ export function LiveHeroStats() {
     {
       label: "Market Cap",
       value: data?.fdv ? formatMarketCap(data.fdv) : "$38M",
-      detail: "Tracked on Solana",
+      detail: "Tracked on BNB Chain",
       isLive: !isError && data?.success,
     },
     {
