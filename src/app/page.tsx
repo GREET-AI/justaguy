@@ -30,16 +30,47 @@ function Hero() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs md:text-sm uppercase tracking-[0.5em] text-white/70">
+          <p
+            className="text-sm md:text-base uppercase tracking-[0.6em] text-white/95 font-bold"
+            style={{
+              textShadow:
+                "0 0 14px rgba(255,255,255,0.35), 0 0 34px rgba(252,195,42,0.22), 0 0 70px rgba(153,69,255,0.10)",
+            }}
+          >
             CT’s cycle thesis
           </p>
           <h1
-            className="text-5xl md:text-7xl font-bangers text-[#fcc32a]"
-            style={{ textShadow: "0 0 30px rgba(252, 195, 42, 0.6)" }}
+            className="text-7xl md:text-9xl font-bangers text-[#fcc32a]"
+            style={{
+              textShadow:
+                [
+                  // crisp outer outline (no inner stroke)
+                  "2px 0 0 rgba(0,0,0,0.85)",
+                  "-2px 0 0 rgba(0,0,0,0.85)",
+                  "0 2px 0 rgba(0,0,0,0.85)",
+                  "0 -2px 0 rgba(0,0,0,0.85)",
+                  "2px 2px 0 rgba(0,0,0,0.75)",
+                  "-2px 2px 0 rgba(0,0,0,0.75)",
+                  "2px -2px 0 rgba(0,0,0,0.75)",
+                  "-2px -2px 0 rgba(0,0,0,0.75)",
+                  // glow
+                  "0 0 18px rgba(255,255,255,0.22)",
+                  "0 0 34px rgba(252,195,42,0.80)",
+                  "0 0 96px rgba(252,195,42,0.45)",
+                  "0 0 170px rgba(251,43,255,0.24)",
+                  "0 0 260px rgba(153,69,255,0.20)",
+                ].join(", "),
+            }}
           >
             {TOKEN_SYMBOL}
           </h1>
-          <p className="hero-subline">
+          <p
+            className="hero-subline font-extrabold text-lg md:text-2xl"
+            style={{
+              textShadow:
+                "0 0 14px rgba(255,255,255,0.35), 0 0 40px rgba(252,195,42,0.22), 0 0 90px rgba(252,195,42,0.12)",
+            }}
+          >
             One cycle can change a bloodline.
           </p>
           <div className="hero-description max-w-3xl">
