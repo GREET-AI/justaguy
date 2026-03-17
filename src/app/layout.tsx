@@ -55,11 +55,11 @@ export const metadata: Metadata = {
   // Favicons und Icons
   icons: {
     icon: [
-      { url: "/Website/Logo/logo.png", sizes: "32x32", type: "image/png" },
-      { url: "/Website/Logo/logo.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
     ],
-    shortcut: "/Website/Logo/logo.png",
-    apple: "/Website/Logo/logo.png",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   
   // Open Graph für Social Media (Facebook, LinkedIn, etc.)
