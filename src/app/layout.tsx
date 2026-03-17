@@ -37,7 +37,7 @@ const SITE_URL =
 export const metadata: Metadata = {
   title: "$GENNY · One Cycle. One Legacy.",
   description:
-    "The generational wealth speedrun. Conviction > noise. One cycle can change a bloodline. $GENNY.",
+    "CT’s cycle thesis. One cycle can change a bloodline. Conviction > noise. Legacy > dopamine. $GENNY.",
   keywords: [
     "GENNY",
     "$GENNY",
@@ -70,12 +70,12 @@ export const metadata: Metadata = {
     siteName: "GENNY",
     title: "$GENNY · One Cycle. One Legacy.",
     description:
-      "The generational wealth speedrun. Conviction > noise. One cycle can change a bloodline. $GENNY.",
+      "CT’s cycle thesis. One cycle can change a bloodline. Conviction > noise. Legacy > dopamine. $GENNY.",
     images: [
       {
-        url: "/Website/Logo/logo.png",
-        width: 1200,
-        height: 630,
+        url: "/hero.png",
+        width: 1366,
+        height: 768,
         alt: "GENNY",
       },
     ],
@@ -88,8 +88,8 @@ export const metadata: Metadata = {
     creator: "@GENNY",
     title: "$GENNY · One Cycle. One Legacy.",
     description:
-      "The generational wealth speedrun. Conviction > noise. One cycle can change a bloodline. $GENNY.",
-    images: ["/Website/Logo/logo.png"],
+      "CT’s cycle thesis. One cycle can change a bloodline. Conviction > noise. Legacy > dopamine. $GENNY.",
+    images: ["/hero.png"],
   },
   
   // Weitere Meta Tags
