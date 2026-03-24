@@ -2,32 +2,35 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import {
+  TOKEN_MINT,
+  TOKEN_NAME,
+  TOKEN_SYMBOL,
+  BUY_URL,
+  DEX_URL,
+  PADRE_TRADE_URL,
+  X_URL,
+} from "@/config/token";
 
 const storyParagraphs = [
-  "$GENNY is a meme with a message: conviction > noise, legacy > dopamine.",
-  "It’s a reminder that a single cycle can change a family line—if you don’t fumble it.",
-  "We’re not here to cosplay “utility”. We’re here to turn a thesis into culture.",
+  `${TOKEN_SYMBOL} (${TOKEN_NAME}) is a Pump.fun launch on Solana: the name is the vibe — show up until the results show up.`,
+  "No corporate roadmap theater — just memes, liquidity, and people who like the ticker enough to post it.",
+  "If you’re here for a quick narrative flip, cool. If you’re here to build culture in public, even better.",
 ];
 
 const missionParagraphs = [
-  "Make the thesis memetic: short, quotable, repeatable.",
-  "Build a community that posts through the chop and shows up for the cycle.",
-  "Push a single North Star: one cycle can change a bloodline.",
+  "Keep the story simple: one mint, one ticker, one official pump link.",
+  "Make it easy for newcomers to verify the CA and avoid clones.",
+  "Reward conviction with jokes, charts, and relentless signal — not promises.",
 ];
 
 const visionParagraphs = [
-  "A culture coin: memes on the surface, generational thinking underneath.",
-  "A community that measures time in cycles, not candles.",
-  "A simple outcome: make the family upgrade stick.",
+  "A Solana-native meme that survives screenshots, spaces, and sideways markets.",
+  "A community that treats attention like leverage — and toxicity like noise.",
+  "A culture where “everything to make it” means daily reps, not magic beans.",
 ];
 
-const BUY_URL =
-  "https://pump.fun/coin/BLUqNbyTuzVJK57odsLwVv2d2582LfdsgqBr3CF9pump";
-const CONTRACT_ADDRESS = "BLUqNbyTuzVJK57odsLwVv2d2582LfdsgqBr3CF9pump";
-const DEX_URL =
-  "https://dexscreener.com/solana/BLUqNbyTuzVJK57odsLwVv2d2582LfdsgqBr3CF9pump";
-const X_URL = "https://x.com/i/communities/2033903468377686414";
-const TG_URL = "https://t.me/GENNYCOMMUNITY7";
+const CONTRACT_ADDRESS = TOKEN_MINT;
 
 const textVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -68,26 +71,28 @@ export default function AboutPage() {
         viewport={{ once: true, amount: 0 }}
       >
         <div className="space-y-12">
-          <p className="section-eyebrow">$GENNY · Generational Wealth</p>
+          <p className="section-eyebrow">
+            {TOKEN_SYMBOL} · {TOKEN_NAME}
+          </p>
           <h1 className="section-title mb-8">Manifesto</h1>
           {storyParagraphs.map((paragraph, index) => (
             <MotionText key={paragraph} index={index}>
               {paragraph}
             </MotionText>
           ))}
-          <div className="glass rounded-3xl border border-white/10 p-6 backdrop-blur space-y-4 bg-gradient-to-br from-yellow-900/20 to-orange-900/20">
-            <p className="text-sm font-semibold text-white/90 mb-2">The $GENNY Manifesto</p>
+          <div className="glass rounded-3xl border border-white/10 p-6 backdrop-blur space-y-4 bg-gradient-to-br from-emerald-950/35 to-amber-900/25">
+            <p className="text-sm font-semibold text-white/90 mb-2">The {TOKEN_SYMBOL} manifesto</p>
             <p className="text-base text-white/80">
-              <span className="font-semibold text-[#fcc32a]">Legacy mindset</span> – Think in decades, not minutes.
+              <span className="font-semibold text-brand-lime">Verify everything</span> – Only trust this CA + official pump link.
             </p>
             <p className="text-base text-white/80">
-              <span className="font-semibold text-[#fcc32a]">One-cycle focus</span> – Treat this cycle like it matters.
+              <span className="font-semibold text-brand-lime">Post the ticker</span> – Culture is distribution.
             </p>
             <p className="text-base text-white/80">
-              <span className="font-semibold text-[#fcc32a]">Pass it down</span> – Build something that outlives you.
+              <span className="font-semibold text-brand-lime">Stay liquid-minded</span> – Risk small, learn fast, no hero bags.
             </p>
             <p className="text-sm text-white/70 mt-4">
-              Your parents worked 40 years for a pension. You can do it in one cycle. This is $GENNY.
+              {TOKEN_NAME} — {TOKEN_SYMBOL} on Solana. DYOR; memes only.
             </p>
           </div>
         </div>
@@ -99,7 +104,7 @@ export default function AboutPage() {
               href={BUY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-[#fcc32a] px-6 py-3 font-bold text-black hover:bg-[#fdd85c] transition"
+              className="inline-flex items-center justify-center rounded-full bg-brand-lime px-6 py-3 font-bold text-black hover:bg-brand-gold-soft transition"
             >
               Buy on Pump.fun
             </Link>
@@ -120,17 +125,17 @@ export default function AboutPage() {
               X / Twitter
             </Link>
             <Link
-              href={TG_URL}
+              href={PADRE_TRADE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/10 px-6 py-3 font-bold text-white/90 hover:bg-white/15 transition"
             >
-              Telegram
+              Trade (Padre)
             </Link>
           </div>
           <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
             <p className="text-xs text-white/60 mb-1">Contract Address (CA)</p>
-            <p className="text-sm font-mono break-all text-[#fcc32a]">{CONTRACT_ADDRESS}</p>
+            <p className="text-sm font-mono break-all text-brand-lime">{CONTRACT_ADDRESS}</p>
           </div>
           <p className="text-xs text-white/55">
             Safety: only trust links from this site. Scammers will copy ticker + logo.

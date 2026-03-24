@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
-import Image from 'next/image';
 import { useLiveTokenData, formatMarketCap, formatPrice, formatVolume } from '../hooks/useLiveTokenData';
 
 interface StatCardProps {
@@ -21,8 +20,8 @@ function StatCard({ label, value, detail, isLoading, isLive, priceChange }: Stat
         <p className="text-xs uppercase tracking-[0.3em] text-white/40">{label}</p>
         {isLive && (
           <div className="flex items-center gap-1">
-            <div className="w-2 h-2 bg-[#fcc32a] rounded-full animate-pulse"></div>
-            <span className="text-xs text-[#fcc32a]">LIVE</span>
+            <div className="w-2 h-2 bg-brand-lime rounded-full animate-pulse"></div>
+            <span className="text-xs text-brand-lime">LIVE</span>
           </div>
         )}
       </div>
@@ -48,7 +47,7 @@ function StatCard({ label, value, detail, isLoading, isLive, priceChange }: Stat
         {priceChange !== undefined && (
           <span className={`text-xs px-2 py-1 rounded-full ${
             priceChange >= 0 
-              ? 'bg-[#fcc32a]/20 text-[#fcc32a]' 
+              ? 'bg-brand-lime/20 text-brand-lime' 
               : 'bg-red-500/20 text-red-400'
           }`}>
             {priceChange >= 0 ? '↗' : '↘'} {Math.abs(priceChange).toFixed(2)}%
@@ -68,28 +67,28 @@ export function LiveHeroStats() {
   const stats = [
     {
       label: "Market Cap",
-      value: data?.fdv ? formatMarketCap(data.fdv) : "$38M",
-      detail: "Tracked on BNB Chain",
+      value: data?.fdv ? formatMarketCap(data.fdv) : "—",
+      detail: "Solana · DexScreener",
       isLive: !isError && data?.success,
     },
     {
       label: "Price",
-      value: data?.priceUsd ? formatPrice(data.priceUsd) : "$0.000038",
-      detail: "Live Price",
+      value: data?.priceUsd ? formatPrice(data.priceUsd) : "—",
+      detail: "Live price",
       isLive: !isError && data?.success,
       priceChange: data?.priceChange?.h24,
     },
     {
       label: "Volume 24h",
-      value: data?.volume?.h24 ? formatVolume(data.volume.h24) : "$2.5M",
-      detail: "Trading Volume",
+      value: data?.volume?.h24 ? formatVolume(data.volume.h24) : "—",
+      detail: "24h volume",
       isLive: !isError && data?.success,
     },
     {
-      label: "LP",
-      value: "100% Burned",
-      detail: "Immortal floor price",
-      isLive: false, // Static
+      label: "Launch",
+      value: "Pump.fun",
+      detail: "Bonding curve → DEX",
+      isLive: false,
     },
   ];
 
@@ -112,43 +111,6 @@ export function LiveHeroStats() {
           priceChange={stat.priceChange}
         />
       ))}
-      
-      {/* Dogwifhat Placeholder Indicator */}
-      <div className="col-span-full mt-2 text-center">
-        <motion.div
-          className="inline-flex items-center gap-2 text-xs text-orange-400 bg-orange-400/10 rounded-lg px-3 py-1"
-          animate={{ 
-            opacity: [0.6, 1, 0.6],
-            scale: [0.98, 1.02, 0.98]
-          }}
-          transition={{ 
-            duration: 2, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-        >
-          <motion.div
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex-shrink-0"
-          >
-            <Image
-              src="/Website/cryptologos/dogwifhat.jpg"
-              alt="dogwifhat"
-              width={20}
-              height={20}
-              className="rounded-md"
-            />
-          </motion.div>
-          <span>Currently showing dogwifhat data as placeholder</span>
-          <motion.div
-            className="w-2 h-2 bg-orange-400 rounded-full"
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 1, repeat: Infinity }}
-          />
-        </motion.div>
-      </div>
-
       {/* Error indicator */}
       {isError && (
         <div className="col-span-full mt-1 text-center">

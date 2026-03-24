@@ -4,6 +4,16 @@ import "./globals.css";
 import { TopNavbar } from "./components/TopNavbar";
 import { ScrollRestoration } from "./components/ScrollRestoration";
 import { CryptoBackground } from "./components/CryptoBackground";
+import {
+  TOKEN_MINT,
+  TOKEN_NAME,
+  TOKEN_SYMBOL,
+  BUY_URL,
+  COIN_IMAGE_URL,
+  META_DESCRIPTION,
+  META_TITLE,
+  TWITTER_HANDLE,
+} from "@/config/token";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -35,61 +45,72 @@ const SITE_URL =
   "https://example.com";
 
 export const metadata: Metadata = {
-  title: "$GENNY · One Cycle. One Legacy.",
-  description:
-    "CT’s cycle thesis. One cycle can change a bloodline. Conviction > noise. Legacy > dopamine. $GENNY.",
+  title: META_TITLE,
+  description: META_DESCRIPTION,
+  applicationName: TOKEN_NAME,
   keywords: [
-    "GENNY",
-    "$GENNY",
-    "generational wealth",
-    "crypto",
+    "everything",
+    "everything to make it",
+    TOKEN_SYMBOL,
+    TOKEN_NAME,
+    TOKEN_MINT,
+    "pump.fun",
+    "Pump fun",
+    "Solana",
+    "SPL",
     "memecoin",
-    "community",
-    "legacy",
-    "cycle"
+    "crypto",
   ],
-  authors: [{ name: "GENNY" }],
-  creator: "GENNY",
-  publisher: "GENNY",
-  
-  // Favicons und Icons
+  authors: [{ name: TOKEN_NAME, url: BUY_URL }],
+  creator: TWITTER_HANDLE,
+  publisher: TOKEN_NAME,
+
+  alternates: {
+    canonical: "/",
+  },
+
+  manifest: "/site.webmanifest",
+
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: COIN_IMAGE_URL },
     ],
     shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    apple: [{ url: COIN_IMAGE_URL, sizes: "180x180" }],
   },
-  
-  // Open Graph für Social Media (Facebook, LinkedIn, etc.)
+
   openGraph: {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
-    siteName: "GENNY",
-    title: "$GENNY · One Cycle. One Legacy.",
-    description:
-      "CT’s cycle thesis. One cycle can change a bloodline. Conviction > noise. Legacy > dopamine. $GENNY.",
+    siteName: TOKEN_NAME,
+    title: META_TITLE,
+    description: META_DESCRIPTION,
     images: [
       {
-        url: "/hero.png",
-        width: 1366,
-        height: 768,
-        alt: "GENNY",
+        url: COIN_IMAGE_URL,
+        width: 1200,
+        height: 1200,
+        alt: `${TOKEN_NAME} — ${TOKEN_SYMBOL} · Solana`,
+      },
+      {
+        url: "/everything.avif",
+        width: 1200,
+        height: 1200,
+        alt: TOKEN_NAME,
+        type: "image/avif",
       },
     ],
   },
-  
-  // Twitter Cards
+
   twitter: {
     card: "summary_large_image",
-    site: "@GENNY",
-    creator: "@GENNY",
-    title: "$GENNY · One Cycle. One Legacy.",
-    description:
-      "CT’s cycle thesis. One cycle can change a bloodline. Conviction > noise. Legacy > dopamine. $GENNY.",
-    images: ["/hero.png"],
+    site: TWITTER_HANDLE,
+    creator: TWITTER_HANDLE,
+    title: META_TITLE,
+    description: META_DESCRIPTION,
+    images: [COIN_IMAGE_URL],
   },
   
   // Weitere Meta Tags
@@ -113,6 +134,11 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0a0c09" },
+    { media: "(prefers-color-scheme: light)", color: "#131812" },
+  ],
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -123,7 +149,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${geistMono.variable} ${bangers.variable} antialiased bg-[#0f172a] text-white`}
+        className={`${montserrat.variable} ${geistMono.variable} ${bangers.variable} antialiased bg-brand-panel text-white`}
       >
         <CryptoBackground />
         <TopNavbar />

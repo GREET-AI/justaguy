@@ -4,17 +4,15 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { TOKEN_SYMBOL, BUY_URL } from "@/config/token";
 
 const navLinks = [
   { label: "Overview", href: "/" },
-  { label: "About $GENNY", href: "/about" },
+  { label: `About ${TOKEN_SYMBOL}`, href: "/about" },
   { label: "Thesis", href: "#thesis" },
   { label: "How to Buy", href: "#how-to-buy" },
   { label: "Meme Machine", href: "#meme-machine" },
 ];
-
-const BUY_URL =
-  "https://pump.fun/coin/BLUqNbyTuzVJK57odsLwVv2d2582LfdsgqBr3CF9pump";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,10 +23,10 @@ export function MobileNav() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
-        className="fixed top-4 left-4 z-[60] flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-[#fcc32a] bg-[#0f172a]/90 backdrop-blur-xl transition-all md:hidden"
+        className="fixed top-4 left-4 z-[60] flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-brand-lime bg-brand-panel/90 backdrop-blur-xl transition-all md:hidden"
         aria-label="Open menu"
       >
-        <Menu className="h-6 w-6 text-[#fcc32a]" />
+        <Menu className="h-6 w-6 text-brand-lime" />
       </motion.button>
 
       <AnimatePresence>
@@ -46,23 +44,23 @@ export function MobileNav() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 z-[60] h-full w-64 border-l-2 border-[#fcc32a]/50 bg-[#0f172a] backdrop-blur-2xl md:hidden shadow-2xl"
+              className="fixed top-0 right-0 z-[60] h-full w-64 border-l-2 border-brand-lime/50 bg-brand-panel backdrop-blur-2xl md:hidden shadow-2xl"
             >
               <div className="flex h-full flex-col p-6">
                 <div className="mb-8 flex items-center justify-between">
                   <Link href="/" onClick={() => setIsOpen(false)}>
-                    <h1 className="text-xl font-bold text-[#fcc32a]" style={{ textShadow: "0 0 20px rgba(252, 195, 42, 0.5)" }}>
-                      GENNY
+                    <h1 className="text-xl font-bold text-brand-lime" style={{ textShadow: "0 0 22px rgba(189, 253, 42, 0.5)" }}>
+                      {TOKEN_SYMBOL}
                     </h1>
                   </Link>
                   <motion.button
                     whileHover={{ rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setIsOpen(false)}
-                    className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-[#fcc32a]/50 bg-[#0f172a] transition hover:bg-[#fcc32a]/20"
+                    className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-brand-lime/50 bg-brand-panel transition hover:bg-brand-lime/20"
                     aria-label="Close menu"
                   >
-                    <X className="h-5 w-5 text-[#fcc32a]" />
+                    <X className="h-5 w-5 text-brand-lime" />
                   </motion.button>
                 </div>
 
@@ -77,7 +75,7 @@ export function MobileNav() {
                       <Link
                         href={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="block px-4 py-3 text-white/80 hover:text-[#fcc32a] hover:bg-[#fcc32a]/10 rounded-xl transition-colors border border-transparent hover:border-[#fcc32a]/30"
+                        className="block px-4 py-3 text-white/80 hover:text-brand-lime hover:bg-brand-lime/10 rounded-xl transition-colors border border-transparent hover:border-brand-lime/30"
                       >
                         {link.label}
                       </Link>
@@ -96,9 +94,9 @@ export function MobileNav() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="block w-full text-center px-6 py-3 bg-[#fcc32a] hover:bg-[#fdd85c] text-black font-bold rounded-full transition-all shadow-lg shadow-[#fcc32a]/50"
+                    className="block w-full text-center px-6 py-3 bg-brand-lime hover:bg-brand-gold-soft text-black font-bold rounded-full transition-all shadow-lg shadow-[0_0_28px_rgba(189,253,42,0.4)]"
                   >
-                    BUY $GENNY
+                    BUY {TOKEN_SYMBOL}
                   </Link>
                 </motion.div>
               </div>

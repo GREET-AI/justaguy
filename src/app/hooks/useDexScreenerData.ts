@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { TOKEN_MINT } from '@/config/token';
 
 interface DexScreenerPair {
   marketCap: number;
@@ -31,13 +32,13 @@ interface TokenStats {
   error: string | null;
 }
 
-export function useDexScreenerData(tokenAddress: string = "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"): TokenStats {
+export function useDexScreenerData(tokenAddress: string = TOKEN_MINT): TokenStats {
   const [data, setData] = useState<TokenStats>({
-    marketCap: 38000000, // Fallback values
-    price: "0.000038",
-    volume24h: 2500000,
-    liquidity: 1200000,
-    priceChange24h: 12.5,
+    marketCap: 0,
+    price: "0",
+    volume24h: 0,
+    liquidity: 0,
+    priceChange24h: 0,
     isLoading: true,
     error: null
   });

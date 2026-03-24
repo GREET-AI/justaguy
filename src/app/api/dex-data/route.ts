@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-
-const DOGWIFHAT_PAIR = 'EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx';
+import { TOKEN_MINT } from '@/config/token';
 
 type DexPair = {
   priceUsd?: string;
@@ -21,10 +20,10 @@ export async function GET() {
   
   try {
     // Fetch DexScreener API
-    console.log(`📡 Fetching: https://api.dexscreener.com/latest/dex/pairs/solana/${DOGWIFHAT_PAIR}`);
-    
-    const response = await fetch(
-      `https://api.dexscreener.com/latest/dex/pairs/solana/${DOGWIFHAT_PAIR}`,
+    const apiUrl = `https://api.dexscreener.com/latest/dex/tokens/solana/${TOKEN_MINT}`;
+    console.log(`📡 Fetching: ${apiUrl}`);
+
+    const response = await fetch(apiUrl,
       {
         headers: {
           'Accept': 'application/json',
@@ -43,19 +42,19 @@ export async function GET() {
     const data = (await response.json()) as DexPairsResponse;
     console.log('📈 Raw DexScreener Data:', JSON.stringify(data, null, 2));
     
-    // For pairs endpoint, data.pair instead of data.pairs[0]
     if (!data.pair && (!data.pairs || data.pairs.length === 0)) {
       throw new Error('No trading pairs found');
     }
 
-    // Use pair directly or find best pair by liquidity
-    const pair = data.pair || (data.pairs && data.pairs.length > 0 
-      ? data.pairs
-          .slice()
-          .sort(
-            (a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0)
-          )[0]
-      : null);
+    const pair =
+      data.pair ||
+      (data.pairs && data.pairs.length > 0
+        ? data.pairs
+            .slice()
+            .sort(
+              (a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0)
+            )[0]
+        : null);
     
     if (!pair) {
       throw new Error('No valid pair found');
@@ -96,17 +95,17 @@ export async function GET() {
     
     // Fallback data - use your original values
     const fallbackData = {
-      priceUsd: '0.000038',
-      fdv: 38000000,
-      marketCap: 38000000,
+      priceUsd: '0',
+      fdv: 0,
+      marketCap: 0,
       volume: {
-        h24: 2500000
+        h24: 0
       },
       liquidity: {
-        usd: 1200000
+        usd: 0
       },
       priceChange: {
-        h24: 12.5
+        h24: 0
       },
       timestamp: new Date().toISOString(),
       success: false,

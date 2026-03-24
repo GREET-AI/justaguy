@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { TOKEN_MINT } from '@/config/token';
 
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const tokenAddress = searchParams.get('address') || 'EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm';
+    const tokenAddress = searchParams.get('address') || TOKEN_MINT;
 
     // Backend kann problemlos externe APIs aufrufen
     const response = await fetch(`https://api.dexscreener.com/latest/dex/tokens/solana/${tokenAddress}`, {

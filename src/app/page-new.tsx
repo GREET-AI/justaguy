@@ -10,9 +10,9 @@ import { HoverBorderGradient } from "./components/HoverBorderGradient";
 import RetroGrid from "./components/RetroGrid";
 import { Sparkles } from "./components/Sparkles";
 import { BackgroundGradient } from "./components/BackgroundGradient";
+import { TOKEN_MINT, X_URL, PADRE_TRADE_URL } from "@/config/token";
 
-// TRUMP CA for now - easy replace later
-const CURRENT_CA = "8t8nY5R9p1gS9fY6ZJ9q4bL5mK7vN2xP3cQ8wE2rF6";
+const CURRENT_CA = TOKEN_MINT;
 
 const roadmapPhases = [
   {
@@ -443,15 +443,16 @@ export default function HomePage() {
             
             <div className="flex justify-center gap-6 mb-8">
               <a
-                href="https://x.com/i/communities/2033903468377686414"
+                href={X_URL}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3 rounded-full transition-colors duration-300"
               >
                 <Twitter className="w-5 h-5" />
               </a>
               
               <a
-                href="https://t.me/GENNYCOMMUNITY7"
+                href={PADRE_TRADE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 p-3 rounded-full transition-colors duration-300"

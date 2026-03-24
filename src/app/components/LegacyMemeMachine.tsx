@@ -26,34 +26,34 @@ export function LegacyMemeMachine({
   const [copied, setCopied] = useState(false);
 
   const vibe = useMemo(() => {
-    if (conviction >= 85) return "Dynasty Mode";
-    if (conviction >= 65) return "Legacy Mode";
-    if (conviction >= 45) return "Builder Mode";
-    return "Tourist Mode";
+    if (conviction >= 85) return "Full Send Mode";
+    if (conviction >= 65) return "Builder Mode";
+    if (conviction >= 45) return "Poster Mode";
+    return "Lurker Mode";
   }, [conviction]);
 
   const templates = useMemo(
     () => [
       () =>
-        `One cycle can change a bloodline. I'm positioned with ${tokenSymbol}.`,
+        `Everything to make it — I'm showing up with ${tokenSymbol}.`,
       () =>
-        `Your parents worked 40 years for a pension. I'm doing it in one cycle. ${tokenSymbol}.`,
+        `Not waiting for perfect conditions. Just better posts and ${tokenSymbol}.`,
       () =>
-        `Not chasing dopamine. Chasing legacy. ${tokenSymbol}.`,
+        `Solana speed, meme culture, zero excuses — ${tokenSymbol}.`,
       () =>
-        `They want quick flips. I want assets that get passed down. ${tokenSymbol}.`,
+        `They want a narrative. I want receipts. ${tokenSymbol}.`,
       () =>
-        `If you treat this cycle like a joke, you'll retire like a joke. ${tokenSymbol}.`,
+        `Conviction slider: ${conviction}% — still here for ${tokenSymbol}.`,
       () =>
-        `Conviction: ${conviction}%. Time horizon: generations. Ticker: ${tokenSymbol}.`,
+        `${tokenSymbol}: the ticker that doubles as a mantra.`,
       () =>
-        `${tokenSymbol}: the meme that reminds you to think in decades.`,
+        `Pump.fun fair launch energy — link the chart, post the ticker — ${tokenSymbol}.`,
       () =>
-        `This isn't "get rich quick". It's "build it so your kids don't start at zero". ${tokenSymbol}.`,
+        `Small size today, louder timeline tomorrow — ${tokenSymbol}.`,
       () =>
-        `Cycle wealth becomes generational wealth when you don't fumble the bag. ${tokenSymbol}.`,
+        `If you're gonna ape, ape something you can explain in one sentence — ${tokenSymbol}.`,
       () =>
-        `I don't want a pump. I want a family upgrade. ${tokenSymbol}.`,
+        `Culture is distribution — ${tokenSymbol} is the banner.`,
     ],
     [tokenSymbol, conviction]
   );
@@ -62,11 +62,12 @@ export function LegacyMemeMachine({
     () => [
       "DYOR.",
       "Not financial advice.",
-      "Conviction > noise.",
-      "One cycle.",
-      "Legacy mindset.",
+      "Verify the mint.",
+      "Post through the chop.",
+      "Memes > meetings.",
       "Screenshots are forever.",
-      "Build. Hold. Pass it down.",
+      "Touch grass. Then shill.",
+      "One CA. One community.",
     ],
     []
   );
@@ -74,7 +75,7 @@ export function LegacyMemeMachine({
   const signature = useMemo(() => {
     const name = familyName.trim();
     if (!name) return "";
-    return ` — The ${name} family office (unlicensed)`;
+    return ` — ${name} intern DAO (unlicensed)`;
   }, [familyName]);
 
   function roll() {
@@ -105,17 +106,17 @@ export function LegacyMemeMachine({
 
   return (
     <div className="grid gap-8 lg:grid-cols-2 items-start">
-      <div className="rounded-3xl border-2 border-[#fcc32a]/30 bg-[#0f172a]/70 backdrop-blur-xl p-8">
+      <div className="rounded-3xl border-2 border-brand-lime/30 bg-brand-panel/70 backdrop-blur-xl p-8">
         <div className="flex items-center justify-between gap-4 mb-6">
           <div>
             <p className="text-xs uppercase tracking-[0.4em] text-white/50">
               Vibe
             </p>
-            <p className="text-2xl font-bangers text-[#fcc32a]">{vibe}</p>
+            <p className="text-2xl font-bangers text-brand-lime">{vibe}</p>
           </div>
           <Link href={buyUrl} target="_blank" rel="noopener noreferrer">
             <motion.button
-              className="px-5 py-3 bg-[#fcc32a] hover:bg-[#fdd85c] text-black font-bold rounded-full transition-all shadow-lg shadow-[#fcc32a]/50 flex items-center gap-2"
+              className="px-5 py-3 bg-brand-lime hover:bg-brand-gold-soft text-black font-bold rounded-full transition-all shadow-lg shadow-[0_0_28px_rgba(189,253,42,0.4)] flex items-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -128,7 +129,7 @@ export function LegacyMemeMachine({
         <div className="space-y-6">
           <div>
             <label className="block text-sm font-bold text-white/80 mb-2">
-              Conviction slider: <span className="text-[#fdd85c]">{conviction}%</span>
+              Conviction slider: <span className="text-brand-gold-soft">{conviction}%</span>
             </label>
             <input
               type="range"
@@ -136,7 +137,7 @@ export function LegacyMemeMachine({
               max={100}
               value={conviction}
               onChange={(e) => setConviction(clamp(Number(e.target.value), 0, 100))}
-              className="w-full accent-[#fcc32a]"
+              className="w-full accent-brand-lime"
             />
             <p className="text-xs text-white/55 mt-2">
               Under 45% you’re officially a “Tourist”. Over 85% you become a “Dynasty” threat.
@@ -151,7 +152,7 @@ export function LegacyMemeMachine({
               value={familyName}
               onChange={(e) => setFamilyName(e.target.value)}
               placeholder="e.g. Nakamoto"
-              className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-white placeholder:text-white/35 outline-none focus:border-[#fcc32a]/60"
+              className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-white placeholder:text-white/35 outline-none focus:border-brand-lime/60"
             />
           </div>
 
@@ -162,13 +163,13 @@ export function LegacyMemeMachine({
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              <Dice5 className="h-5 w-5 text-[#fcc32a]" />
+              <Dice5 className="h-5 w-5 text-brand-lime" />
               Roll
             </motion.button>
             <motion.button
               onClick={copy}
               disabled={!lastLine}
-              className="px-6 py-3 rounded-full bg-[#fcc32a]/15 hover:bg-[#fcc32a]/20 border border-[#fcc32a]/30 text-[#fdd85c] font-bold flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="px-6 py-3 rounded-full bg-brand-lime/15 hover:bg-brand-lime/20 border border-brand-lime/30 text-brand-gold-soft font-bold flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
               whileHover={{ scale: lastLine ? 1.03 : 1 }}
               whileTap={{ scale: lastLine ? 0.97 : 1 }}
             >
@@ -190,7 +191,7 @@ export function LegacyMemeMachine({
                 whileHover={{ scale: lastLine ? 1.03 : 1 }}
                 whileTap={{ scale: lastLine ? 0.97 : 1 }}
               >
-                <Twitter className="h-5 w-5 text-[#fcc32a]" />
+                <Twitter className="h-5 w-5 text-brand-lime" />
                 Post to X
               </motion.button>
             </Link>
@@ -198,13 +199,13 @@ export function LegacyMemeMachine({
         </div>
       </div>
 
-      <div className="rounded-3xl border-2 border-[#fcc32a]/30 bg-gradient-to-br from-black/40 to-[#0f172a]/80 backdrop-blur-xl p-8 overflow-hidden relative">
-        <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[#fcc32a]/20 blur-3xl" />
+      <div className="rounded-3xl border-2 border-brand-lime/30 bg-gradient-to-br from-black/40 to-brand-panel/80 backdrop-blur-xl p-8 overflow-hidden relative">
+        <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-lime/20 blur-3xl" />
         <div className="absolute -bottom-28 -left-28 h-72 w-72 rounded-full bg-[#9945FF]/20 blur-3xl" />
 
         <div className="relative">
           <div className="flex items-center gap-2 text-white/70 mb-4">
-            <Sparkles className="h-4 w-4 text-[#fdd85c]" />
+            <Sparkles className="h-4 w-4 text-brand-gold-soft" />
             <span className="text-xs uppercase tracking-[0.4em]">Share Card</span>
           </div>
 
@@ -225,7 +226,7 @@ export function LegacyMemeMachine({
               <div className="text-xs text-white/50">
                 Conviction: <span className="text-white/80 font-bold">{conviction}%</span> · {vibe}
               </div>
-              <div className="text-xs text-[#fcc32a] font-bold">
+              <div className="text-xs text-brand-lime font-bold">
                 {tokenSymbol}
               </div>
             </div>

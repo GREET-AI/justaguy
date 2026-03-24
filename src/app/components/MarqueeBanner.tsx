@@ -37,45 +37,45 @@ const allQuotes = [
 export function MarqueeBanner() {
   // Statische Arrays für konsistente Server/Client Rendering
   const bar1Quotes = useMemo(() => [
-    "Binance Bandits. The Golden Era of BNB Chain. The chart only goes up 🟨",
-    "100% golden candles only. No red allowed. Jeets get rekt.",
-    "LP burned forever. Contract renounced. One Bandit to rule them all.",
-    "Fair launch on four.meme. Everyone becomes a Bandit.",
-    "The Golden Era on BNB Chain. Chart only goes up.",
-    "No red candles. Only golden. Only Bandits. 🟨🟨🟨",
-    "Jeets not welcome. Red candles not allowed. Only golden.",
-    "The Golden Era in a world full of golden candles.",
-    "The only roadmap that only goes up. Golden candles forever.",
-    "Binance Bandits takes over BNB Chain. Moon + Jeep giveaway coming.",
-    "More golden candles than ever seen. The chart only goes up.",
-    "Binance Bandits. Built different. Chart only goes up."
+    "$EVERYTHING · everything to make it · Solana · Pump.fun",
+    "Fair launch energy — verify the mint, ignore the clones",
+    "Post the ticker. Steal the timeline. DYOR always.",
+    "Bonding curve szn — chart on Dexscreener when it’s live",
+    "Padre / Pump / Phantom — pick your weapon",
+    "Conviction posts > secret cabal screenshots",
+    "Memes are marketing. Liquidity is the scoreboard.",
+    "One CA. One story. Everything to make it.",
+    "CT runs on attention — spend yours wisely",
+    "Not financial advice — entertainment + internet money",
+    "Show up daily — that’s the real unlock",
+    "Solana speed. Meme culture. No excuses.",
   ], []);
 
   const bar2Quotes = useMemo(() => [
-    "The chart only goes up 🟨🟨🟨 No red candles allowed.",
-    "Binance Bandits in a world full of golden candles.",
-    "100% golden candles. Jeets get rekt. One Bandit to rule them all.",
-    "The Golden Era on BNB Chain. Welcome to the Bandits.",
-    "LP burned. Contract renounced. Chart only goes up.",
-    "Everyone becomes a Bandit. The community takes over BNB Chain.",
-    "No red candles. Only golden. Only Bandits. Forever.",
-    "The only roadmap that only goes up. Golden candles only.",
-    "Jeets not welcome. Red candles not allowed. Just golden.",
-    "One Bandit to rule them all. Chart only goes up."
+    "everything to make it — the name is the whole sentence",
+    "$EVERYTHING on Solana — link the pump, not a promise",
+    "Copy the CA from this site — scammers love similar tickers",
+    "Trade the chart — build the lore — touch grass sometimes",
+    "Pump.fun launch — community writes the roadmap in real time",
+    "Holders post. Skeptics quote-tweet. Charts decide.",
+    "Make memes. Make friends. Maybe make it.",
+    "Liquidity moves fast — wallets move faster",
+    "If it’s not fun, you’re doing memecoins wrong",
+    "Everything to make it — stack reps, not excuses",
   ], []);
   return (
     <div className="w-full h-24 md:h-28 relative overflow-visible bg-transparent pointer-events-none -mt-10 md:-mt-12 -mb-10 md:-mb-12">
       {/* Bar 1 - Waagerecht, läuft nach rechts */}
       <div className="absolute top-0 left-0 w-full flex items-center z-20">
-        <div className="w-[500%] h-12 md:h-14 bg-black/85 backdrop-blur-md border-t-2 border-b-2 border-[#fcc32a] shadow-2xl shadow-[#fcc32a]/60 overflow-hidden">
+        <div className="w-[500%] h-12 md:h-14 bg-black/85 backdrop-blur-md border-t-2 border-b-2 border-brand-lime shadow-2xl shadow-[0_0_24px_rgba(189,253,42,0.45)] overflow-hidden">
           <div className="absolute inset-0 flex items-center whitespace-nowrap" style={{ animation: 'marquee 48s linear infinite' }}>
             {bar1Quotes.map((quote, index) => (
-              <span key={index} className="text-sm md:text-base font-bangers tracking-widest uppercase text-[#fcc32a] mx-6" style={{ filter: 'drop-shadow(0 0 15px rgba(252, 195, 42, 0.9)) drop-shadow(0 0 20px #fcc32a)' }}>
+              <span key={index} className="text-sm md:text-base font-bangers tracking-widest uppercase text-brand-lime mx-6" style={{ filter: 'drop-shadow(0 0 14px rgba(189, 253, 42, 0.85)) drop-shadow(0 0 22px rgba(232, 184, 70, 0.5))' }}>
                 {quote}
               </span>
             ))}
             {bar1Quotes.map((quote, index) => (
-              <span key={`dup-${index}`} className="text-sm md:text-base font-bangers tracking-widest uppercase text-[#fcc32a] mx-6" style={{ filter: 'drop-shadow(0 0 15px rgba(252, 195, 42, 0.9)) drop-shadow(0 0 20px #fcc32a)' }}>
+              <span key={`dup-${index}`} className="text-sm md:text-base font-bangers tracking-widest uppercase text-brand-lime mx-6" style={{ filter: 'drop-shadow(0 0 14px rgba(189, 253, 42, 0.85)) drop-shadow(0 0 22px rgba(232, 184, 70, 0.5))' }}>
                 {quote}
               </span>
             ))}
@@ -85,15 +85,15 @@ export function MarqueeBanner() {
 
       {/* Bar 2 - Waagerecht, läuft nach links (gegenläufig) */}
       <div className="absolute bottom-0 left-0 w-full flex items-center z-20">
-        <div className="w-[500%] h-12 md:h-14 bg-black/85 backdrop-blur-md border-t-2 border-b-2 border-[#fcc32a] shadow-2xl shadow-[#fcc32a]/60 overflow-hidden">
+        <div className="w-[500%] h-12 md:h-14 bg-black/85 backdrop-blur-md border-t-2 border-b-2 border-brand-lime shadow-2xl shadow-[0_0_24px_rgba(189,253,42,0.45)] overflow-hidden">
           <div className="absolute inset-0 flex items-center whitespace-nowrap" style={{ animation: 'marquee-reverse 42s linear infinite' }}>
             {bar2Quotes.map((quote, index) => (
-              <span key={index} className="text-sm md:text-base font-bangers tracking-widest uppercase text-[#fcc32a] mx-6" style={{ filter: 'drop-shadow(0 0 15px rgba(252, 195, 42, 0.9)) drop-shadow(0 0 20px #fcc32a)' }}>
+              <span key={index} className="text-sm md:text-base font-bangers tracking-widest uppercase text-brand-lime mx-6" style={{ filter: 'drop-shadow(0 0 14px rgba(189, 253, 42, 0.85)) drop-shadow(0 0 22px rgba(232, 184, 70, 0.5))' }}>
                 {quote}
               </span>
             ))}
             {bar2Quotes.map((quote, index) => (
-              <span key={`dup-${index}`} className="text-sm md:text-base font-bangers tracking-widest uppercase text-[#fcc32a] mx-6" style={{ filter: 'drop-shadow(0 0 15px rgba(252, 195, 42, 0.9)) drop-shadow(0 0 20px #fcc32a)' }}>
+              <span key={`dup-${index}`} className="text-sm md:text-base font-bangers tracking-widest uppercase text-brand-lime mx-6" style={{ filter: 'drop-shadow(0 0 14px rgba(189, 253, 42, 0.85)) drop-shadow(0 0 22px rgba(232, 184, 70, 0.5))' }}>
                 {quote}
               </span>
             ))}

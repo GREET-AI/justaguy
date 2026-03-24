@@ -1,0 +1,17 @@
+{
+  "name": "everything to make it ($EVERYTHING)",
+  "short_name": "$EVERYTHING",
+  "description": "Solana memecoin on Pump.fun — everything to make it.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#131812",
+  "theme_color": "#0a0c09",
+  "icons": [
+    {
+      "src": "/everything.avif",
+      "sizes": "512x512",
+      "type": "image/avif",
+      "purpose": "any maskable"
+    }
+  ]
+}
