@@ -127,7 +127,6 @@ function Hero() {
 const thesisSteps = [
   {
     phase: "Step 1 · Start ugly",
-    emoji: "🧱",
     bullets: [
       "No perfect entry — just an entry",
       "Wallet ready, mind ready, memes ready",
@@ -138,7 +137,6 @@ const thesisSteps = [
   },
   {
     phase: "Step 2 · Stack proof",
-    emoji: "📣",
     bullets: [
       "Post the ticker, own the story",
       "Liquidity is belief + time",
@@ -149,7 +147,6 @@ const thesisSteps = [
   },
   {
     phase: "Step 3 · Make it",
-    emoji: "🚀",
     bullets: [
       "Graduation is a meme — until it isn’t",
       "Trade the chart, build the lore",
@@ -224,7 +221,7 @@ export default function Home() {
       >
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-brand-panel/70 z-0" />
-      <div className="max-w-7xl mx-auto relative z-10 pt-32 md:pt-40 pb-20 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto relative z-10 pt-32 md:pt-40 pb-12 md:pb-16 px-4 md:px-8">
           {/* About / Thesis intro */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -284,7 +281,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="grid gap-8 lg:grid-cols-3 mb-16 md:mb-24">
             {thesisSteps.map((phase, index) => (
       <motion.div
                 key={phase.phase}
@@ -297,7 +294,6 @@ export default function Home() {
                 <div className="absolute inset-0 bg-brand-lime/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 
                 <div className="relative z-10">
-                  <div className="text-5xl mb-4">{phase.emoji}</div>
                   <div className="text-sm text-brand-lime font-bold mb-2">{phase.phase}</div>
                   
                   {/* Progress Bar - Always Yellow */}
@@ -318,14 +314,13 @@ export default function Home() {
         </div>
                       </div>
 
-                  <ul className="space-y-3">
+                  <ul className="list-none space-y-3">
                     {phase.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-white/80">
-                        <span className="text-brand-lime mt-1">🟩</span>
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
+                      <li key={i} className="text-sm text-white/80 leading-relaxed">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
             ))}
@@ -333,8 +328,10 @@ export default function Home() {
           </div>
     </section>
 
-        {/* Marquee Banner Separator */}
-        <MarqueeBanner />
+        {/* Marquee Banner Separator — extra gap below thesis cards */}
+        <div className="relative z-10 mt-10 md:mt-16">
+          <MarqueeBanner />
+        </div>
 
       {/* How to Buy Section - Section 3 */}
       <section id="how-to-buy" className="section3-background relative w-full">
